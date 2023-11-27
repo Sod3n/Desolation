@@ -1,0 +1,12 @@
+{
+    "name": "Controlls",
+    "maps": [
+        {
+            "name": "GameMap",
+            "id": "f7b04bd8-ed3a-4238-9a31-d70b6c9e48a0",
+            "actions": [],
+            "bindings": []
+        }
+    ],
+    "controlSchemes": []
+}
