@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
     },
+    "com.nenpotato.animate": {
+      "version": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "427c0039261debab2c00b7b9f3bd8b9e93bb7fef"
+    },
     "com.unity.addressables": {
       "version": "1.21.19",
       "depth": 0,

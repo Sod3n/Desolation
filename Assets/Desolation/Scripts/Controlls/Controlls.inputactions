@@ -4,8 +4,50 @@
         {
             "name": "GameMap",
             "id": "f7b04bd8-ed3a-4238-9a31-d70b6c9e48a0",
-            "actions": [],
-            "bindings": []
+            "actions": [
+                {
+                    "name": "BasicAttack",
+                    "type": "Button",
+                    "id": "f5170612-8fa7-4427-94b8-d0b567042cf0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SkillTwo",
+                    "type": "Button",
+                    "id": "a43de607-671b-4613-906a-1ab1b44893da",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "0ecf7a0b-8e3a-4543-8d3d-552327949113",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BasicAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cdc6495f-e454-4ad3-ba37-29ade21a457d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "Invert",
+                    "groups": "",
+                    "action": "SkillTwo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
