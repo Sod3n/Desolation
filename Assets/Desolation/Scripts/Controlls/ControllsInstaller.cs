@@ -9,5 +9,9 @@ public class ControllsInstaller : MonoInstaller
     public override void InstallBindings()
     {
         Container.Bind<Controlls>().AsSingle();
+        
+        Container
+            .BindInterfacesTo<EnableControlls>()
+            .AsSingle();
     }
 }
