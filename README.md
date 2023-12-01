@@ -2,7 +2,8 @@
  
 ## Используемые плагины:
 
-- Animancer lite
+- ~~Animancer lite~~
+    - Платно
 - Extenject
 - Unitask
 - Addresables
