@@ -7,7 +7,7 @@ namespace Player
 {
     public class Input : ITickable, IInitializable
     {
-        public Vector2 MovementDirection { get; private set; }
+        public Vector3 MovementDirection { get; private set; }
 
         private Controlls _controlls;
 
@@ -23,7 +23,8 @@ namespace Player
 
         public void Tick()
         {
-            MovementDirection = _controlls.Gameplay.Movement.ReadValue<Vector2>();
+            Vector2 inputDirection = _controlls.Gameplay.Movement.ReadValue<Vector2>();
+            MovementDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
         }
     }
 }
