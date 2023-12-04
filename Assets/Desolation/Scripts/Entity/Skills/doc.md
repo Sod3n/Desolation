@@ -1,7 +1,5 @@
 # Skills
 
-## Content
-
 ## Description
 
 The main idea of this namespace is that we have three different objects: Skills, Skill Components and Skill Controller. Skill Controller manage skills, skills manage skill components and skill components represent the behaviour of the skill. This way the game builds skills with different compositions of skill components.
