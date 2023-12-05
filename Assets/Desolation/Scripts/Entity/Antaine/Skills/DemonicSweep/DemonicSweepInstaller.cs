@@ -2,18 +2,21 @@ using Entity.Skills;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using Zenject;
 
 namespace Entity.Antaine
 {
-    public class DashInstaller : SkillInstaller<Dash>
+
+    //[CreateAssetMenu(fileName = "BasicAttack", menuName = "Installers/UntitledInstaller")]
+    public class DemonicSweepInstaller : SkillInstaller<DemonicSweep>
     {
-        public Settings DashSettings;
+        public Settings DemonicSweepSettings;
 
         public override void SilentInstall(DiContainer subContainer)
         {
-            subContainer.BindInstances(DashSettings.Clip);
+            subContainer.BindInstances(DemonicSweepSettings.AttackClip);
 
             subContainer
                 .BindInterfacesTo<PlayAnimation>()
@@ -21,18 +24,14 @@ namespace Entity.Antaine
                 .WithArguments(ISkill.State.Action);
 
             subContainer
-                .BindInterfacesTo<BreakIn>()
-                .AsSingle();
-
-            subContainer
-                .BindInterfacesAndSelfTo<Dash>()
+                .BindInterfacesAndSelfTo<DemonicSweep>()
                 .AsSingle();
         }
 
         [Serializable]
         public class Settings
         {
-            public AnimationClip Clip;
+            public AnimationClip AttackClip;
         }
     }
 }

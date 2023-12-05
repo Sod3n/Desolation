@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 457b2acf7d46a32439f497bedd3bef53, type: 3}
+  m_Script: {fileID: 11500000, guid: 5cea8dbb9f801a6439f8b89298d974e2, type: 3}
   m_Name: BasicAttack2
   m_EditorClassIdentifier: 
   BasicAttackSettings:

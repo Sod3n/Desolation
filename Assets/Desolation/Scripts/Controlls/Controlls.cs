@@ -37,9 +37,27 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""SkillTwo"",
+                    ""name"": ""SkillOne"",
                     ""type"": ""Button"",
                     ""id"": ""a43de607-671b-4613-906a-1ab1b44893da"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillTwo"",
+                    ""type"": ""Button"",
+                    ""id"": ""e9bea372-9db8-45b4-92c1-81f07781c975"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillThree"",
+                    ""type"": ""Button"",
+                    ""id"": ""59599d4f-2521-4543-8c30-319dce080a31"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -61,11 +79,33 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""cdc6495f-e454-4ad3-ba37-29ade21a457d"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": ""Invert"",
                     ""groups"": """",
+                    ""action"": ""SkillOne"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a4e5a79b-f40f-4731-a90d-ce6005e7ce46"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
                     ""action"": ""SkillTwo"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""469d2bbd-528b-4c7c-9503-26ca4a0d955d"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillThree"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -77,7 +117,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         // GameMap
         m_GameMap = asset.FindActionMap("GameMap", throwIfNotFound: true);
         m_GameMap_BasicAttack = m_GameMap.FindAction("BasicAttack", throwIfNotFound: true);
+        m_GameMap_SkillOne = m_GameMap.FindAction("SkillOne", throwIfNotFound: true);
         m_GameMap_SkillTwo = m_GameMap.FindAction("SkillTwo", throwIfNotFound: true);
+        m_GameMap_SkillThree = m_GameMap.FindAction("SkillThree", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -140,13 +182,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_GameMap;
     private List<IGameMapActions> m_GameMapActionsCallbackInterfaces = new List<IGameMapActions>();
     private readonly InputAction m_GameMap_BasicAttack;
+    private readonly InputAction m_GameMap_SkillOne;
     private readonly InputAction m_GameMap_SkillTwo;
+    private readonly InputAction m_GameMap_SkillThree;
     public struct GameMapActions
     {
         private @Controlls m_Wrapper;
         public GameMapActions(@Controlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @BasicAttack => m_Wrapper.m_GameMap_BasicAttack;
+        public InputAction @SkillOne => m_Wrapper.m_GameMap_SkillOne;
         public InputAction @SkillTwo => m_Wrapper.m_GameMap_SkillTwo;
+        public InputAction @SkillThree => m_Wrapper.m_GameMap_SkillThree;
         public InputActionMap Get() { return m_Wrapper.m_GameMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -159,9 +205,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @BasicAttack.started += instance.OnBasicAttack;
             @BasicAttack.performed += instance.OnBasicAttack;
             @BasicAttack.canceled += instance.OnBasicAttack;
+            @SkillOne.started += instance.OnSkillOne;
+            @SkillOne.performed += instance.OnSkillOne;
+            @SkillOne.canceled += instance.OnSkillOne;
             @SkillTwo.started += instance.OnSkillTwo;
             @SkillTwo.performed += instance.OnSkillTwo;
             @SkillTwo.canceled += instance.OnSkillTwo;
+            @SkillThree.started += instance.OnSkillThree;
+            @SkillThree.performed += instance.OnSkillThree;
+            @SkillThree.canceled += instance.OnSkillThree;
         }
 
         private void UnregisterCallbacks(IGameMapActions instance)
@@ -169,9 +221,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @BasicAttack.started -= instance.OnBasicAttack;
             @BasicAttack.performed -= instance.OnBasicAttack;
             @BasicAttack.canceled -= instance.OnBasicAttack;
+            @SkillOne.started -= instance.OnSkillOne;
+            @SkillOne.performed -= instance.OnSkillOne;
+            @SkillOne.canceled -= instance.OnSkillOne;
             @SkillTwo.started -= instance.OnSkillTwo;
             @SkillTwo.performed -= instance.OnSkillTwo;
             @SkillTwo.canceled -= instance.OnSkillTwo;
+            @SkillThree.started -= instance.OnSkillThree;
+            @SkillThree.performed -= instance.OnSkillThree;
+            @SkillThree.canceled -= instance.OnSkillThree;
         }
 
         public void RemoveCallbacks(IGameMapActions instance)
@@ -192,6 +250,8 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     public interface IGameMapActions
     {
         void OnBasicAttack(InputAction.CallbackContext context);
+        void OnSkillOne(InputAction.CallbackContext context);
         void OnSkillTwo(InputAction.CallbackContext context);
+        void OnSkillThree(InputAction.CallbackContext context);
     }
 }

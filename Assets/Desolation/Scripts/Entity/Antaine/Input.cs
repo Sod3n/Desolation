@@ -9,7 +9,9 @@ namespace Entity.Antaine
     public class Input : IInitializable
     {
         public event Action BasicAttack;
+        public event Action SkillOne;
         public event Action SkillTwo;
+        public event Action SkillThree;
 
         private Controlls _controlls;
 
@@ -21,7 +23,9 @@ namespace Entity.Antaine
         public void Initialize()
         {
             _controlls.GameMap.BasicAttack.performed += (_) => { BasicAttack.Invoke(); };
+            _controlls.GameMap.SkillOne.performed += (_) => { SkillOne.Invoke(); };
             _controlls.GameMap.SkillTwo.performed += (_) => { SkillTwo.Invoke(); };
+            _controlls.GameMap.SkillThree.performed += (_) => { SkillThree.Invoke(); };
         }
     }
 }

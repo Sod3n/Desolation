@@ -9,23 +9,27 @@ namespace Entity.Antaine
     public class BindSkills : IInitializable
     {
         private BasicAttackSequence _basicAttack;
-        private Dash _dash;
+        private WingsOfNight _wingsOfNight;
+        private DemonicSweep _demonicSweep;
         private Input _input;
         private ISkillController _skillController;
 
-        public BindSkills(BasicAttackSequence basicAttack, 
-            Input input, ISkillController skillController, Dash dash)
+        public BindSkills(BasicAttackSequence basicAttack,
+            Input input, ISkillController skillController, WingsOfNight dash, DemonicSweep demonicSweep)
         {
             _basicAttack = basicAttack;
             _input = input;
             _skillController = skillController;
-            _dash = dash;
+            _wingsOfNight = dash;
+            _demonicSweep = demonicSweep;
         }
 
         public void Initialize()
         {
             _input.BasicAttack += () => { _skillController.TryUseSkill(_basicAttack); };
-            _input.SkillTwo += () => { _skillController.TryUseSkill(_dash); };
+            _input.SkillOne += () => { _skillController.TryUseSkill(_demonicSweep); };
+            _input.SkillTwo += () => { _skillController.TryUseSkill(_wingsOfNight); };
+            _input.SkillThree += () => { _skillController.TryUseSkill(_wingsOfNight); };
         }
     }
 }

@@ -32,6 +32,7 @@ namespace Entity.Skills
 
         public void Use()
         {
+            
             IsDone = false;
             _isAnimationPlaying = false;
         }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88a1ab43feadb4a4c917c095106839bf, type: 3}
-  m_Name: Dash
+  m_Name: WingsOfNight
   m_EditorClassIdentifier: 
   DashSettings:
     Clip: {fileID: -4544348295636322209, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}

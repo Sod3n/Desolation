@@ -11,8 +11,6 @@ namespace Entity.Antaine
     public class PlayerInstaller : MonoInstaller
     {
         public AniMateComponent AniMateComponent;
-        public BasicAttackInstaller FirstAttackInstaller;
-
 
         public override void InstallBindings()
         {
