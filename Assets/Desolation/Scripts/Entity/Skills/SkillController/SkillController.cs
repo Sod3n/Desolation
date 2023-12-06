@@ -6,11 +6,11 @@ using Zenject;
 
 namespace Entity.Skills
 {
-    public class SkillController : ISkillController, ITickable, IFixedTickable
+    public class SkillController : ISkillController
     {
         public ISkill Skill { get; set; }
 
-        public event Action<ISkill> OnTryUseSkill = (_) => { };
+        public event Action<ISkill> TryingUse = (_) => { };
 
         private bool _IsCurrentSkillDone
         {
@@ -30,15 +30,21 @@ namespace Entity.Skills
 
             Skill?.Tick();
         }
+        public void LateTick()
+        {
+            if (_IsCurrentSkillDone) return;
+
+            Skill?.LateTick();
+        }
 
         public bool TryUseSkill(ISkill skill)
         {
-            OnTryUseSkill.Invoke(skill);
+            TryingUse.Invoke(skill);
 
             if (!Skill?.IsDone ?? false) return false;
 
             Skill = skill;
-            Skill.Use();
+            Skill?.Use();
 
             return true;
         }

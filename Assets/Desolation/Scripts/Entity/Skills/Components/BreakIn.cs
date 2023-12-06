@@ -2,23 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Zenject;
 
 namespace Entity.Skills
 {
-    public class BreakIn : ISkillComponent
+    public class BreakIn : ISkillComponent, IInitializable
     {
         public bool IsDone => true;
 
         private ISkillController _controller;
+        private LazyInject<ISkill> _owner;
 
-        public BreakIn(ISkillController controller)
+        public BreakIn(ISkillController controller, LazyInject<ISkill> owner)
         {
             _controller = controller;
+            _owner = owner;
+        }
 
-            _controller.OnTryUseSkill += (ISkill skill) =>
+        public void Initialize()
+        {
+            _controller.TryingUse += (ISkill skill) =>
             {
-                if((skill.Components?.Contains(this) ?? false) && 
-                (!_controller.Skill?.Components?.Contains(this) ?? true))
+                if (skill == _owner.Value && _controller.Skill != _owner.Value)
                 {
                     _controller.Skill?.Break();
                 }

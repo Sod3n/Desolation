@@ -9,23 +9,22 @@ using Zenject;
 namespace Entity.Antaine
 {
 
-    //[CreateAssetMenu(fileName = "BasicAttack", menuName = "Installers/UntitledInstaller")]
+    [CreateAssetMenu(fileName = "BasicAttack", menuName = "Installers/UntitledInstaller")]
     public class BasicAttackInstaller : SkillInstaller<BasicAttack>
     {
         public Settings BasicAttackSettings;
 
         public override void SilentInstall(DiContainer subContainer)
         {
+            base.SilentInstall(subContainer);
+            SetStatesCount(subContainer);
+
             subContainer.BindInstances(BasicAttackSettings.AttackClip);
 
             subContainer
                 .BindInterfacesTo<PlayAnimation>()
                 .AsSingle()
-                .WithArguments(ISkill.State.Action);
-
-            subContainer
-                .BindInterfacesAndSelfTo<BasicAttack>()
-                .AsSingle();
+                .WithArguments(State(0));
         }
 
         [Serializable]

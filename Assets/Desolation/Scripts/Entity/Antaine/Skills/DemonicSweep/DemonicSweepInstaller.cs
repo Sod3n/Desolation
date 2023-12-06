@@ -16,22 +16,27 @@ namespace Entity.Antaine
 
         public override void SilentInstall(DiContainer subContainer)
         {
+            base.SilentInstall(subContainer);
+            SetStatesCount(subContainer);
+
             subContainer.BindInstances(DemonicSweepSettings.AttackClip);
 
             subContainer
                 .BindInterfacesTo<PlayAnimation>()
                 .AsSingle()
-                .WithArguments(ISkill.State.Action);
+                .WithArguments(State(0));
 
             subContainer
-                .BindInterfacesAndSelfTo<DemonicSweep>()
-                .AsSingle();
+                .BindInterfacesTo<Cooldown>()
+                .AsSingle()
+                .WithArguments(DemonicSweepSettings.Cooldown);
         }
 
         [Serializable]
         public class Settings
         {
             public AnimationClip AttackClip;
+            public float Cooldown;
         }
     }
 }

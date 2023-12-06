@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: DemonicSweep
   m_EditorClassIdentifier: 
   DemonicSweepSettings:
-    AttackClip: {fileID: 0}
+    AttackClip: {fileID: 4220788157198656543, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}
+    Cooldown: 5

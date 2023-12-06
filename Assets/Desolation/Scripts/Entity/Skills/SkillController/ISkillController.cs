@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Entity.Skills
 {
-    public interface ISkillController
+    public interface ISkillController :  Zenject.ITickable, Zenject.IFixedTickable, Zenject.ILateTickable
     {
         /// <summary>
         /// Last used skill.
@@ -15,7 +15,7 @@ namespace Entity.Skills
         /// <summary>
         /// Event that is called when trying to use a skill, before checking if current skill done.
         /// </summary>
-        public event Action<ISkill> OnTryUseSkill;
+        public event Action<ISkill> TryingUse;
 
         /// <summary>
         /// Use skill if possible(if previus skill is done or something make its done on OnTryUseSkill event).

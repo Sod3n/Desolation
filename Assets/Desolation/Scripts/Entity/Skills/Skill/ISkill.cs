@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static UnityEngine.Experimental.Rendering.RayTracingAccelerationStructure;
 
 namespace Entity.Skills
 {
@@ -11,44 +13,52 @@ namespace Entity.Skills
     /// State changes when IsDone of all components with current StateOfExecution become true. Or there no components.
     /// If one of components failed to use than skill considered to be failed to use.
     /// </summary>
-    public interface ISkill
+    public interface ISkill : 
+        Zenject.IInitializable, Zenject.ITickable, 
+        Zenject.IFixedTickable, Zenject.ILateTickable,
+        ISkillComponent.IUseable, ISkillComponent.IBreakable
     {
-        public void Use();
-        public void Tick();
-        public void FixedTick();
-        public void Break();
+
         public State CurrentState { get; }
-        public bool IsDone { get; }
 
         public List<ISkillComponent> Components { get; }
 
-        public class State
+
+        public enum State : int 
+        { 
+            None = -1 
+        }
+
+        public static State ToState(uint i) 
+        { 
+            return (State)i; 
+        }
+        public class StateIterator
         {
-            public static readonly State Prepare = new State();
-            public static readonly State Action = new State();
-            public static readonly State Recovery = new State();
+            private int _count;
+            private State _state = 0;
 
-            private static List<State> _states = new List<State>
-            {
-                Prepare,
-                Action,
-                Recovery
-            };
+            public State State { get => _state; set => _state = value; }
 
-            public static State First
+            public StateIterator(int count)
             {
-                get
-                {
-                    return _states.FirstOrDefault();
-                }
+                _count = count;
             }
 
-            public State NextState
+            public void NextState()
             {
-                get
-                {
-                    return _states.SkipWhile(s => s != this).Skip(1).FirstOrDefault();
-                }
+                _state++;
+
+                if((int)_state >= _count)
+                    _state = 0;
+            }
+            public void Reset()
+            {
+                _state = 0;
+            }
+            public bool IsNone()
+            {
+                return _state == State.None;
             }
         }
     }

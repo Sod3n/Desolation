@@ -26,6 +26,10 @@ namespace Entity.Antaine
                 .AsSingle();
 
             Container
+                .Bind<WorldsApart.ChargeEvents>()
+                .AsSingle();
+
+            Container
                 .BindInterfacesTo<BindSkills>()
                 .AsSingle();
         }

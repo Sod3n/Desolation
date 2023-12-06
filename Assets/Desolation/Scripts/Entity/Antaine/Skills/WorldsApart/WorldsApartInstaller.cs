@@ -7,31 +7,32 @@ using Zenject;
 
 namespace Entity.Antaine
 {
-    public class WingsOfNightInstaller : SkillInstaller<WingsOfNight>
+    public class WorldsApartInstaller : SkillInstaller<WorldsApart>
     {
-        public Settings DashSettings;
+        public Settings WorldsApartSettings;
 
         public override void SilentInstall(DiContainer subContainer)
         {
             base.SilentInstall(subContainer);
             SetStatesCount(subContainer);
 
-            subContainer.BindInstances(DashSettings.Clip);
+            subContainer
+                .BindInterfacesAndSelfTo<Charge>()
+                .AsSingle();
 
             subContainer
-                .BindInterfacesTo<PlayAnimation>()
-                .AsSingle()
-                .WithArguments(ISkill.ToState(0));
-
-            subContainer
-                .BindInterfacesTo<BreakIn>()
+                .Bind<Charge.Events>()
+                .To<WorldsApart.ChargeEvents>()
+                .FromResolve()
                 .AsSingle();
         }
 
         [Serializable]
         public class Settings
         {
-            public AnimationClip Clip;
+            public AnimationClip ChargeStartClip;
+            public AnimationClip ChargeIdleClip;
+            public AnimationClip AttackClip;
         }
     }
 }

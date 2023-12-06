@@ -9,7 +9,8 @@ namespace Entity.Antaine
 {
     public class DemonicSweep : Skill
     {
-        public DemonicSweep(List<ISkillComponent> components, List<ISkillComponent.ITickable> tickables, List<ISkillComponent.IBreakable> breakables, List<ISkillComponent.IUseable> useables, List<ISkillComponent.IFixedTickable> fixedTickables) : base(components, tickables, breakables, useables, fixedTickables)
+
+        public DemonicSweep(List<ISkillComponent> components, ISkill.StateIterator state) : base(components, state)
         {
         }
     }

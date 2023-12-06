@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cea8dbb9f801a6439f8b89298d974e2, type: 3}
-  m_Name: BasicAttack1
+  m_Script: {fileID: 11500000, guid: a4eb8b6bdc271854eb5fc7bdc4fc088d, type: 3}
+  m_Name: WorldsApart
   m_EditorClassIdentifier: 
-  BasicAttackSettings: {AttackClip: {fileID: 1800461235413176547, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}}

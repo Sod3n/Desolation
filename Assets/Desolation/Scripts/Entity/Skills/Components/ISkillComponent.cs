@@ -17,28 +17,17 @@ namespace Entity.Skills
         {
             public void Use();
         }
+        public interface IChargeable : ISkillComponent
+        {
+            public void Charge();
+        }
 
         public interface ITickable : ISkillComponent
         {
             /// <summary>
-            /// Note that it should be set in the constructor. Without changes at runtime.
+            /// State of skill when all ticks accures.
             /// </summary>
             public ISkill.State TargetState { get; }
-            /// <summary>
-            /// Accure every zenject tick when state of skill equals TargetState.
-            /// </summary>
-            public void Tick();
-        }
-        public interface IFixedTickable : ISkillComponent
-        {
-            /// <summary>
-            /// Note that it should be set in the constructor. Without changes at runtime.
-            /// </summary>
-            public ISkill.State TargetState { get; }
-            /// <summary>
-            /// Accure every zenject fixedTick when state of skill equals TargetState.
-            /// </summary>
-            public void FixedTick();
         }
 
         public interface IBreakable : ISkillComponent

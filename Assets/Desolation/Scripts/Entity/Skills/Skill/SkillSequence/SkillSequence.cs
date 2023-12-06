@@ -24,7 +24,7 @@ namespace Entity.Skills
             }
         }
 
-        public ISkill.State CurrentState => Skill?.CurrentState ?? null;
+        public ISkill.State CurrentState => Skill?.CurrentState ?? ISkill.State.None;
 
         public List<ISkillComponent> Components => Skill?.Components;
 
@@ -35,7 +35,6 @@ namespace Entity.Skills
             _resetTaskFactory = resetTaskFactory;
             _resetCancelToken = new CancellationTokenSource();
         }
-
 
         public void Use()
         {
@@ -78,6 +77,11 @@ namespace Entity.Skills
             if (isCanceled) return;
 
             _sequenceIndex = 0;
+        }
+
+        public void Initialize()
+        {
+            _skills.ForEach(skill => skill.Initialize());
         }
     }
 }

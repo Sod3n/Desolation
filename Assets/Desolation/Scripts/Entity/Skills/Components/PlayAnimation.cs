@@ -10,7 +10,7 @@ namespace Entity.Skills
     /// <summary>
     /// Component become done when clip is ended.
     /// </summary>
-    public class PlayAnimation : ISkillComponent.IFixedTickable, ISkillComponent.IUseable
+    public class PlayAnimation : ISkillComponent.ITickable, ISkillComponent.IUseable, Zenject.IFixedTickable
     {
         private AniMateComponent _animate;
         private AnimationClip _clip;

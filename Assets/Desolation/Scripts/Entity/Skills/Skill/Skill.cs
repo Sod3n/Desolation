@@ -11,11 +11,11 @@ namespace Entity.Skills
         private List<ISkillComponent> _components;
         private List<ISkillComponent.IUseable> _useables;
         private List<ISkillComponent.ITickable> _tickables;
-        private List<ISkillComponent.IFixedTickable> _fixedTickables;
         private List<ISkillComponent.IBreakable> _breakables;
+        private List<Zenject.IInitializable> _initializables;
 
-        private ISkill.State _state;
-        public ISkill.State CurrentState => _state;
+        private ISkill.StateIterator _stateIterator;
+        public ISkill.State CurrentState => _stateIterator.State;
         private bool _isBreaked;
         public bool IsDone
         {
@@ -27,17 +27,10 @@ namespace Entity.Skills
 
         public List<ISkillComponent> Components { get => _components; }
 
-        public Skill(List<ISkillComponent> components,
-            List<ISkillComponent.ITickable> tickables,
-            List<ISkillComponent.IBreakable> breakables,
-            List<ISkillComponent.IUseable> useables,
-            List<ISkillComponent.IFixedTickable> fixedTickables)
+        public Skill(List<ISkillComponent> components, ISkill.StateIterator state)
         {
             _components = components;
-            _tickables = tickables;
-            _breakables = breakables;
-            _useables = useables;
-            _fixedTickables = fixedTickables;
+            _stateIterator = state;
         }
 
         /// <summary>
@@ -45,42 +38,57 @@ namespace Entity.Skills
         /// </summary>
         public void Use()
         {
-            _state = ISkill.State.First;
-            _useables.ForEach(c => c.Use());
+            _stateIterator.Reset();
             _isBreaked = false;
+
+            _useables.ForEach(c => c.Use());
         }
 
         /// <summary>
+        /// Do some init logic of skill and initialize all initializable components.
+        /// </summary>
+        public void Initialize()
+        {
+            SortComponentsByInterfaces();
+
+            _initializables.ForEach(c => c.Initialize());
+        }
+
+
+        /// <summary>
         /// Not execute if state is null.
-        /// While its not find any _tickable or _fixedTickable components with target state as current state of skill
-        /// and that not done yet it will change its state to next. When it find so it will execute Tick on finded
+        /// While its not find any _tickable component with target state as current state of skill
+        /// and that not done yet it will change skill state to next. When it find this it will execute Tick on finded
         /// tickables components.
         /// </summary>
         public void Tick()
         {
-            LoopComponentsStates();
-
-            if (_state is null)
-                return;
-
-            foreach (var tickable in _tickables.Where(c => c.TargetState == _state && !c.IsDone)) 
+            foreach(var tickable in TickablesOfType<Zenject.ITickable>())
+            {
                 tickable.Tick();
+            }
         }
+
         /// <summary>
-        /// Not execute if state is null.
-        /// While its not find any _tickable or _fixedTickable components with target state as current state of skill
-        /// and that not done yet it will change its state to next. When it find so it will execute FixedTick on finded
-        /// fixed tickables components.
+        /// Same as tick, but for fixed tick of zenject.
         /// </summary>
         public void FixedTick()
         {
-            LoopComponentsStates();
-
-            if (_state is null)
-                return;
-
-            foreach (var tickable in _fixedTickables.Where(c => c.TargetState == _state && !c.IsDone))
+            foreach (var tickable in TickablesOfType<Zenject.IFixedTickable>())
+            {
                 tickable.FixedTick();
+            }
+        }
+
+        /// <summary>
+        /// Same as tick, but for late tick of zenject.
+        /// </summary>
+        public void LateTick()
+        {
+            foreach (var tickable in TickablesOfType<Zenject.ILateTickable>())
+            {
+                tickable.LateTick();
+            }
         }
 
         /// <summary>
@@ -92,28 +100,49 @@ namespace Entity.Skills
             {
                 breackable.Break();
             }
-            _state = null;
+            _stateIterator.State = ISkill.State.None;
             _isBreaked = true;
+        }
+
+        private void SortComponentsByInterfaces()
+        {
+            _useables = _components.OfType<ISkillComponent.IUseable>().ToList();
+            _tickables = _components.OfType<ISkillComponent.ITickable>().ToList();
+            _breakables = _components.OfType<ISkillComponent.IBreakable>().ToList();
+            _initializables = _components.OfType<Zenject.IInitializable>().ToList();
+        }
+        private IEnumerable<T> TickablesOfType<T>() where T : class
+        {
+            LoopComponentsStates();
+
+            if (_stateIterator.IsNone())
+                yield break;
+
+            foreach (var tickable in _tickables.Where(c => c.TargetState == _stateIterator.State && !c.IsDone))
+            {
+                var concreteTickable = tickable as T;
+
+                if (concreteTickable is null) continue;
+
+                yield return concreteTickable;
+            }
         }
 
         private void LoopComponentsStates()
         {
             if (IsDone)
             {
-                _state = null;
+                _stateIterator.State = ISkill.State.None;
                 return;
             }
 
-            while (!_tickables.Any(c => c.TargetState == _state && !c.IsDone) &&
-                !_fixedTickables.Any(c => c.TargetState == _state && !c.IsDone))
+            while (!_tickables.Any(c => c.TargetState == _stateIterator.State && !c.IsDone))
             {
-                if (_state is null)
+                if (_stateIterator.IsNone())
                     return;
 
-                _state = _state.NextState;
+                _stateIterator.NextState();
             }
         }
-
-        
     }
 }
