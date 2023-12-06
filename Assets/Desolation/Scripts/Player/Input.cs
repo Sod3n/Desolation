@@ -8,6 +8,7 @@ namespace Player
     public class Input : ITickable, IInitializable
     {
         public Vector3 MovementDirection { get; private set; }
+        public bool TestTakeDamage;
 
         private Controlls _controlls;
 
@@ -25,6 +26,8 @@ namespace Player
         {
             Vector2 inputDirection = _controlls.Gameplay.Movement.ReadValue<Vector2>();
             MovementDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
+
+            TestTakeDamage = _controlls.Gameplay.TakeDamageTest.triggered;
         }
     }
 }
