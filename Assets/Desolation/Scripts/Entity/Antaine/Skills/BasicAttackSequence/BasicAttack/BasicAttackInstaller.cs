@@ -12,25 +12,39 @@ namespace Entity.Antaine
     [CreateAssetMenu(fileName = "BasicAttack", menuName = "Installers/UntitledInstaller")]
     public class BasicAttackInstaller : SkillInstaller<BasicAttack>
     {
-        public Settings BasicAttackSettings;
+        public Settings StateSettings;
 
-        public override void SilentInstall(DiContainer subContainer)
+        private State.Identificator _state;
+
+        protected override void InstallStates()
         {
-            base.SilentInstall(subContainer);
-            SetStatesCount(subContainer);
+            _state = _stateSequenceFactory.Create(1).State(0);
 
-            subContainer.BindInstances(BasicAttackSettings.AttackClip);
+            Container.BindState(State);
+        }
 
-            subContainer
-                .BindInterfacesTo<PlayAnimation>()
-                .AsSingle()
-                .WithArguments(State(0));
+        private void State(DiContainer subContainer)
+        {
+            subContainer.BindController(_state);
+
+            subContainer.BindComponent<PlayAnimation>(StateSettings.Action.Animation);
+            subContainer.BindComponent<MakeDamage>(StateSettings.Action.MakeDamage);
+            subContainer.BindComponent<MoveForward>(StateSettings.Action.MoveForward);
+            subContainer.BindComponent<LookIn>();
         }
 
         [Serializable]
         public class Settings
         {
-            public AnimationClip AttackClip;
+            public ActionState Action;
+
+            [Serializable]
+            public class ActionState
+            {
+                public PlayAnimation.Settings Animation;
+                public MoveForward.Settings MoveForward;
+                public MakeDamage.Settings MakeDamage;
+            }
         }
     }
 }

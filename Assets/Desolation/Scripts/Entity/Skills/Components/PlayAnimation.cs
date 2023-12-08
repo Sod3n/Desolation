@@ -4,46 +4,49 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace Entity.Skills
 {
     /// <summary>
-    /// Component become done when clip is ended.
+    /// Component become done when on clip end. 
     /// </summary>
-    public class PlayAnimation : ISkillComponent.ITickable, ISkillComponent.IUseable, Zenject.IFixedTickable
+    public class PlayAnimation : IComponent.IEnterable
     {
         private AniMateComponent _animate;
-        private AnimationClip _clip;
-        public ISkill.State TargetState { get; }
+        private Settings _settings;
 
         public PlayAnimation(
-            ISkill.State targetState, 
-            AniMateComponent animate, 
-            AnimationClip clip)
+            AniMateComponent animate,
+            Settings settings)
         {
-            TargetState = targetState;
             _animate = animate;
-            _clip = clip;
+            _settings = settings;
         }
+
 
         public bool IsDone { get; private set; }
 
-        private bool _isAnimationPlaying;
-
-        public void Use()
+        public void OnStateEnter()
         {
-            
             IsDone = false;
-            _isAnimationPlaying = false;
+            var state = _animate.Play(_settings.Clip);
+
+            if (_settings.WaitClipEnd)
+            {
+                state.OnEnd += () => { IsDone = true; };
+            }
+            else
+            {
+                IsDone = true;
+            }
         }
 
-        public void FixedTick()
+        [Serializable]
+        public class Settings
         {
-            if(_isAnimationPlaying) return;
-
-            _isAnimationPlaying = true;
-            var state = _animate.Play(_clip);
-            state.OnEnd += () => { IsDone = true; };
+            public AnimationClip Clip;
+            public bool WaitClipEnd = true;
         }
     }
 }

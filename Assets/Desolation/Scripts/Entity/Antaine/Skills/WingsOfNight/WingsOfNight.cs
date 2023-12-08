@@ -7,8 +7,6 @@ namespace Entity.Antaine
 {
     public class WingsOfNight : Skill
     {
-        public WingsOfNight(List<ISkillComponent> components, ISkill.StateIterator state) : base(components, state)
-        {
-        }
+
     }
 }

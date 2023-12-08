@@ -12,6 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c5efd2ad06db744a68bd0ae7de4840, type: 3}
   m_Name: DemonicSweep
   m_EditorClassIdentifier: 
-  DemonicSweepSettings:
-    AttackClip: {fileID: 4220788157198656543, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}
-    Cooldown: 5
+  StateSettings:
+    Action:
+      Animation:
+        Clip: {fileID: 4220788157198656543, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}
+        WaitClipEnd: 1
+      MoveForward:
+        UnitsPerSecond: 2
+      MakeDamage:
+        DamageScale: 2
+        DamageZone: {fileID: 4631166471603675953, guid: 1fe2a6b73180e754a9fa08f92a9a17a0, type: 3}
+      Cooldown:
+        Value: 5

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SkillSequnceSettings:
     Skills:
-    - {fileID: 11400000, guid: 909e518f7664ec0419958018cce873a4, type: 2}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 11400000, guid: d273cce07442ade4ebe619835624c373, type: 2}
+    - {fileID: 11400000, guid: e30a718d4a01bca469122c1fdac92ac2, type: 2}
+    - {fileID: 11400000, guid: e2ab2165ebb52824b8486d45392199fa, type: 2}
   BasicAttackSequenceSettings:
     WaitSecondsResetSettings:
       Seconds: 1

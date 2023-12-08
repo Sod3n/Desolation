@@ -10,9 +10,5 @@ namespace Entity.Antaine
 {
     public class BasicAttackSequence : SkillSequence
     {
-        public BasicAttackSequence(List<ISkill> ñomboSkills, IResetTaskFactory resetTaskFactory) 
-            : base(ñomboSkills, resetTaskFactory)
-        {
-        }
     }
 }

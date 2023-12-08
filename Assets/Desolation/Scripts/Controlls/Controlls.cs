@@ -62,6 +62,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""AimPoint"",
+                    ""type"": ""Value"",
+                    ""id"": ""8159618b-7a5d-427a-9e90-bc1937a84597"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -108,6 +117,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""SkillThree"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a59d4c5c-06ea-41f0-ab9d-eb532f251de0"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""AimPoint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -120,6 +140,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         m_GameMap_SkillOne = m_GameMap.FindAction("SkillOne", throwIfNotFound: true);
         m_GameMap_SkillTwo = m_GameMap.FindAction("SkillTwo", throwIfNotFound: true);
         m_GameMap_SkillThree = m_GameMap.FindAction("SkillThree", throwIfNotFound: true);
+        m_GameMap_AimPoint = m_GameMap.FindAction("AimPoint", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -185,6 +206,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameMap_SkillOne;
     private readonly InputAction m_GameMap_SkillTwo;
     private readonly InputAction m_GameMap_SkillThree;
+    private readonly InputAction m_GameMap_AimPoint;
     public struct GameMapActions
     {
         private @Controlls m_Wrapper;
@@ -193,6 +215,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         public InputAction @SkillOne => m_Wrapper.m_GameMap_SkillOne;
         public InputAction @SkillTwo => m_Wrapper.m_GameMap_SkillTwo;
         public InputAction @SkillThree => m_Wrapper.m_GameMap_SkillThree;
+        public InputAction @AimPoint => m_Wrapper.m_GameMap_AimPoint;
         public InputActionMap Get() { return m_Wrapper.m_GameMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -214,6 +237,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @SkillThree.started += instance.OnSkillThree;
             @SkillThree.performed += instance.OnSkillThree;
             @SkillThree.canceled += instance.OnSkillThree;
+            @AimPoint.started += instance.OnAimPoint;
+            @AimPoint.performed += instance.OnAimPoint;
+            @AimPoint.canceled += instance.OnAimPoint;
         }
 
         private void UnregisterCallbacks(IGameMapActions instance)
@@ -230,6 +256,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @SkillThree.started -= instance.OnSkillThree;
             @SkillThree.performed -= instance.OnSkillThree;
             @SkillThree.canceled -= instance.OnSkillThree;
+            @AimPoint.started -= instance.OnAimPoint;
+            @AimPoint.performed -= instance.OnAimPoint;
+            @AimPoint.canceled -= instance.OnAimPoint;
         }
 
         public void RemoveCallbacks(IGameMapActions instance)
@@ -253,5 +282,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         void OnSkillOne(InputAction.CallbackContext context);
         void OnSkillTwo(InputAction.CallbackContext context);
         void OnSkillThree(InputAction.CallbackContext context);
+        void OnAimPoint(InputAction.CallbackContext context);
     }
 }

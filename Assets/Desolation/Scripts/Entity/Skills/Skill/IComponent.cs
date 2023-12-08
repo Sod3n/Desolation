@@ -6,36 +6,36 @@ using UnityEngine;
 
 namespace Entity.Skills
 {
-    public interface ISkillComponent
+    public interface IComponent
     {
         /// <summary>
         /// Inform skill that this component is done.
         /// </summary>
         public bool IsDone { get; }
 
-        public interface IUseable : ISkillComponent
+        public interface IEnterable : IComponent
         {
-            public void Use();
-        }
-        public interface IChargeable : ISkillComponent
-        {
-            public void Charge();
+            public void OnStateEnter();
         }
 
-        public interface ITickable : ISkillComponent
+        public interface ITickable : IComponent
         {
-            /// <summary>
-            /// State of skill when all ticks accures.
-            /// </summary>
-            public ISkill.State TargetState { get; }
+            public void Tick();
         }
-
-        public interface IBreakable : ISkillComponent
+        public interface IFixedTickable : IComponent
+        {
+            public void FixedTick();
+        }
+        public interface ILateTickable : IComponent
+        {
+            public void LateTick();
+        }
+        public interface IBreakable : IComponent
         {
             /// <summary>
             /// Accure when something breaks skill. Generaly its other skill with BreakIn component.
             /// </summary>
-            public void Break();
+            public void OnBreak();
         }
     }
 }

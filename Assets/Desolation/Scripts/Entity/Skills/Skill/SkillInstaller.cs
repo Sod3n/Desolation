@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Zenject;
 
@@ -8,12 +9,7 @@ namespace Entity.Skills
 {
     public abstract class SkillInstaller : ScriptableObjectInstaller
     {
-        /// <summary>
-        /// Must add skill of type T to subContainer. 
-        /// Also this is place where all skill components will be binded to skill.
-        /// </summary>
-        /// <param name="subContainer"></param>
-        public abstract void SilentInstall(DiContainer subContainer);
+        protected abstract void InstallStates();
     }
 
     /// <summary>
@@ -22,46 +18,69 @@ namespace Entity.Skills
     /// <typeparam name="T"></typeparam>
     public abstract class SkillInstaller<T> : SkillInstaller where T : ISkill
     {
+        protected StateSequenceFactory _stateSequenceFactory;
+
+        protected bool _breakeable = false;
+
         public override void InstallBindings()
         {
-            Container
-                .Bind(typeof(T), typeof(Zenject.IInitializable))
-                .To<T>()
-                .FromSubContainerResolve()
-                .ByMethod(SilentInstall)
-                .AsSingle();
-        }
+            _stateSequenceFactory = new StateSequenceFactory();
 
-        public override void SilentInstall(DiContainer subContainer)
-        {
-            subContainer
+            InstallStates();
+
+            Container
                 .BindInterfacesAndSelfTo<T>()
                 .AsSingle()
-                .WhenNotInjectedInto<T>();
-            
+                .WithArguments(_breakeable);
+
+            Container
+                .BindInterfacesTo<SkillTickableManager>()
+                .AsSingle();
+
+            Container
+                .Bind<StateIterator>()
+                .AsCached();
         }
 
-        private int _stateCount;
-
-        protected void SetStatesCount(DiContainer subContainer, int count = 3)
+        public void MakeBreakeable()
         {
-            _stateCount = count;
+            _breakeable = true;
+        }
+    }
 
-            subContainer
-                .Bind<ISkill.StateIterator>()
-                .AsSingle()
-                .WithArguments(count)
-                .IfNotBound();
+    public static class SkillInstallerExtensions
+    {
+        public static void BindComponent<TComponent>(
+            this DiContainer container, 
+            params object[] arguments) 
+            where TComponent : IComponent
+        {
+            container
+                .BindInterfacesTo<TComponent>()
+                .AsCached()
+                .WithArguments(arguments);
         }
 
-        protected ISkill.State State(uint i)
+        public static void BindController(
+            this DiContainer container, 
+            State.Identificator state)
         {
-            if (i >= _stateCount)
-                throw new Exception(
-                    "Trying to get state that greater than state count. " +
-                    "Expand state count or take smaller state.");
+            container
+                .Bind<State>()
+                .AsCached()
+                .WithArguments(state);
+        }
 
-            return ISkill.ToState(i);
+        public static void BindState(
+            this DiContainer container, 
+            Action<DiContainer> byMethod)
+        {
+            container
+                .Bind<State>()
+                .FromSubContainerResolve()
+                .ByMethod(byMethod)
+                .WithKernel()
+                .AsCached();
         }
     }
 }

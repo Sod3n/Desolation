@@ -9,29 +9,36 @@ namespace Entity.Antaine
 {
     public class WingsOfNightInstaller : SkillInstaller<WingsOfNight>
     {
-        public Settings DashSettings;
+        public Settings StateSettings;
 
-        public override void SilentInstall(DiContainer subContainer)
+        private State.Identificator _state;
+
+        protected override void InstallStates()
         {
-            base.SilentInstall(subContainer);
-            SetStatesCount(subContainer);
+            _state = _stateSequenceFactory.Create(1).State(0);
 
-            subContainer.BindInstances(DashSettings.Clip);
+            Container.BindState(State);
+        }
 
-            subContainer
-                .BindInterfacesTo<PlayAnimation>()
-                .AsSingle()
-                .WithArguments(ISkill.ToState(0));
+        private void State(DiContainer subContainer)
+        {
+            subContainer.BindController(_state);
 
-            subContainer
-                .BindInterfacesTo<BreakIn>()
-                .AsSingle();
+            subContainer.BindComponent<PlayAnimation>(StateSettings.Action.Animation);
+            subContainer.BindComponent<MoveForward>(StateSettings.Action.MoveForward);
         }
 
         [Serializable]
         public class Settings
         {
-            public AnimationClip Clip;
+            public ActionState Action;
+
+            [Serializable]
+            public class ActionState
+            {
+                public PlayAnimation.Settings Animation;
+                public MoveForward.Settings MoveForward;
+            }
         }
     }
 }

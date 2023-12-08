@@ -9,46 +9,40 @@ using Zenject;
 
 namespace Entity.Skills
 {
-    public class SkillSequence : SkillController, ISkill
+    public class SkillSequence : ISkill
     {
-        private List<ISkill> _skills;
-        private int _sequenceIndex = 0;
-        private IResetTaskFactory _resetTaskFactory;
-        private CancellationTokenSource _resetCancelToken;
-
+        [Inject] private List<ISkill> _skills;
+        [Inject] private IResetTaskFactory _resetTaskFactory;
+        [Inject] public bool Breakeable { get; private set; }
+        [InjectOptional] private CancellationTokenSource _resetCancelToken = new CancellationTokenSource();
+        
+        
         public bool IsDone
         {
             get
             {
-                return Skill?.IsDone ?? true;
+                return _currentSkill?.IsDone ?? true;
             }
         }
 
-        public ISkill.State CurrentState => Skill?.CurrentState ?? ISkill.State.None;
-
-        public List<ISkillComponent> Components => Skill?.Components;
-
-        public SkillSequence(List<ISkill> ñomboSkills, 
-            IResetTaskFactory resetTaskFactory)
-        {
-            _skills = ñomboSkills;
-            _resetTaskFactory = resetTaskFactory;
-            _resetCancelToken = new CancellationTokenSource();
+        public State.Identificator CurrentState 
+        { 
+            get => _currentSkill?.CurrentState ?? State.Identificator.None; 
         }
 
         public void Use()
         {
-            if(!TryUseSkill(_skills[_sequenceIndex])) return;
-
+            _currentSkill = _skills[_sequenceIndex];
+            _currentSkill.Use();
             RestartResetSequence();
             IncreaseComboIndex();
         }
 
         public void Break()
         {
-            Skill?.Break();
+            _currentSkill?.Break();
             _sequenceIndex = 0;
-            Skill = null;
+            _currentSkill = null;
         }
 
         private void RestartResetSequence()
@@ -79,9 +73,8 @@ namespace Entity.Skills
             _sequenceIndex = 0;
         }
 
-        public void Initialize()
-        {
-            _skills.ForEach(skill => skill.Initialize());
-        }
+        private int _sequenceIndex = 0;
+
+        private ISkill _currentSkill;
     }
 }

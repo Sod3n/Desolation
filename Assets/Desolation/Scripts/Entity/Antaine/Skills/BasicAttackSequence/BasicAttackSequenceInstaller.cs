@@ -16,19 +16,11 @@ namespace Entity.Antaine
     {
         public Settings BasicAttackSequenceSettings;
 
-        public override void SilentInstall(DiContainer subContainer)
+        protected override void InstallStates()
         {
-            InstallSkills(subContainer);
+            Container.BindWaitSecondsReset(BasicAttackSequenceSettings.WaitSecondsResetSettings);
 
-            subContainer
-                .Bind<IResetTaskFactory>()
-                .To<WaitSecondsReset>()
-                .AsSingle()
-                .WithArguments(BasicAttackSequenceSettings.WaitSecondsResetSettings);
-
-            subContainer
-                .Bind<BasicAttackSequence>()
-                .AsSingle();
+            MakeBreakeable();
         }
 
         [Serializable]
