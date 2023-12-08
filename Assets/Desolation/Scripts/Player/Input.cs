@@ -26,8 +26,6 @@ namespace Player
         {
             Vector2 inputDirection = _controlls.Gameplay.Movement.ReadValue<Vector2>();
             MovementDirection = new Vector3(inputDirection.x, 0, inputDirection.y);
-
-            TestTakeDamage = _controlls.Gameplay.TakeDamageTest.triggered;
         }
     }
 }
