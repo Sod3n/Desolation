@@ -2,7 +2,7 @@ using Zenject;
 
 namespace Player
 { 
-    public class PlayerMovement : ITickable
+    public class PlayerMovement : IFixedTickable
     {
         private Input _input;
         private Movement _movement;
@@ -15,7 +15,7 @@ namespace Player
             _health = health;
         }
 
-        public void Tick()
+        public void FixedTick()
         {
             _movement.MovementDirection = _input.MovementDirection;
 
