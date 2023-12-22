@@ -8,9 +8,6 @@ namespace Entity.Skills
 {
     public interface IComponent
     {
-        /// <summary>
-        /// Inform skill that this component is done.
-        /// </summary>
         public bool IsDone { get; }
 
         public interface IEnterable : IComponent
@@ -32,9 +29,6 @@ namespace Entity.Skills
         }
         public interface IBreakable : IComponent
         {
-            /// <summary>
-            /// Accure when something breaks skill. Generaly its other skill with BreakIn component.
-            /// </summary>
             public void OnBreak();
         }
     }

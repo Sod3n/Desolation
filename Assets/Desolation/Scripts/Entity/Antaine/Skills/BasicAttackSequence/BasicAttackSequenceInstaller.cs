@@ -16,7 +16,7 @@ namespace Entity.Antaine
     {
         public Settings BasicAttackSequenceSettings;
 
-        protected override void InstallStates()
+        protected override void ConfigureSkillSequence()
         {
             Container.BindWaitSecondsReset(BasicAttackSequenceSettings.WaitSecondsResetSettings);
 

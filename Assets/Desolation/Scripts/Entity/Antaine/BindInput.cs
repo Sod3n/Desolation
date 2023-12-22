@@ -8,7 +8,7 @@ namespace Entity.Antaine
 {
     public class BindInput : IInitializable, ITickable
     {
-        private ISkill _basicAttack;
+        private ISkill _basicAttackSequence;
         private ISkill _wingsOfNight;
         private ISkill _demonicSweep;
         private ISkill _worldsApart;
@@ -27,7 +27,7 @@ namespace Entity.Antaine
             WorldsApart worldsApart,
             Transform transform, LookIn.Direction lookDirection)
         {
-            _basicAttack = basicAttackSequence;
+            _basicAttackSequence = basicAttackSequence;
             _input = input;
             _skillController = skillController;
             _wingsOfNight = dash;
@@ -40,7 +40,7 @@ namespace Entity.Antaine
 
         public void Initialize()
         {
-            _input.BasicAttack += () => { _skillController.TryUseSkill(_basicAttack); };
+            _input.BasicAttack += () => { _skillController.TryUseSkill(_basicAttackSequence); };
             _input.SkillOne += () => { _skillController.TryUseSkill(_demonicSweep); };
             _input.SkillTwo += () => { _skillController.TryUseSkill(_wingsOfNight); };
             _input.SkillThree += () => { _skillController.TryUseSkill(_worldsApart); };

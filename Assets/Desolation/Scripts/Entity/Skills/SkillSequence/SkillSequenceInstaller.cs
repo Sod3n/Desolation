@@ -29,7 +29,7 @@ namespace Entity.Skills
                 .To<SkillController>()
                 .AsSingle();
 
-            InstallStates();
+            ConfigureSkillSequence();
 
             Container
                 .Bind<T>()
@@ -37,6 +37,10 @@ namespace Entity.Skills
                 .WithArguments(_breakeable)
                 .WhenNotInjectedInto<T>();
         }
+
+        protected override void InstallStates() { }
+
+        protected abstract void ConfigureSkillSequence();
 
         [Serializable]
         public class Settings

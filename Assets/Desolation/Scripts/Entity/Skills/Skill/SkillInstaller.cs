@@ -42,7 +42,7 @@ namespace Entity.Skills
                 .AsCached();
         }
 
-        public void MakeBreakeable()
+        protected void MakeBreakeable()
         {
             _breakeable = true;
         }
