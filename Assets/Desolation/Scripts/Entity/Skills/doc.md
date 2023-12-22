@@ -2,50 +2,209 @@
 
 ## Description
 
-The main idea of this namespace is that we have three different objects: Skills, Skill Components and Skill Controller. Skill Controller manage skills, skills manage skill components and skill components represent the behaviour of the skill. This way the game builds skills with different compositions of skill components.
+So in this namespace we have this objects:
 
-On top of that we also have skill sequence with list of skills that in fact isolated skill controller with some additions like go over assigned skills and reset of it go over after something. But it also ISkill.
+### Skill Controller
+
+Bring for us some controll about using skill. Current implementation for example use skill only if last skill was done or it is breakeable(can be interapted by other skills).
+
+### Skill
+
+Facade for our skill object.
+
+### State Iterator
+
+Provides a way to move between skill states, ensures to enter iterated states and thereby provide a facade to entering the state. 
+
+### Skill Tickable Manager
+
+Using State Iterator iterates to not done state and invoke its ticks(Tick, FixedTick, LateTick) on Zenject analog.
+
+### Skill Sequence
+
+Iterates over list of attached skills on using. So on first “Use” invoke will be invoked first skill, on second - second and etc. This iteration will be interapted if unitask “_resetTaskFactory” will become finished but this task reset on each “Use”. For now we have just timer task that count seconds and i think we will use it everywhere. 
+
+### State Sequence
+
+Just list of State Identificator `s.
+
+### State Sequence Factory
+
+Creates State Sequence object of specified length. Basically State Iterator will be iterate over firstly create Sequence. So to iterate over another Sequence you need manualy change state of skill to one of the state of another Sequence. For example you can use some of  Skill Components inherited from StateChanger class.
+
+### State
+
+Represent state of skill. Contains components, id and its behaviour.
+
+### IComponent
+
+Interfaces to describe component behaviour.
+
+### Skill Installer <T>
+
+Abstract skill intstaller where we primaly describe skill by creating states and adding components and anothers properties(breackable it or not).
+
+### Skill Sequence Installer
+
+Abstacr skill sequence installer where we describe skill sequnce. For now you can specify reset task and make it breackable.
 
 ## How to create skill
 
 At first, create a script for the required skill and inherit it from the Skill class:
 
 ```csharp
-public class BasicAttack : Skill
+public class BasicAttack : Skill { }
+```
+
+Create a skill installer by inheriting from the SkillInstaller<T> class. Configure the skill in the InstallStates method. 
+
+To create state sequence use _stateSequenceFactory and get state ids from this:
+
+```csharp
+var baseStateSequence = _stateSequenceFactory.Create(2);
+
+_prepare = baseStateSequence.State(0);
+_attack = baseStateSequence.State(1);
+```
+
+Then describe state in method to bind it as subcontainer:
+
+```csharp
+private void PrepareState(DiContainer subContainer)
 {
-    public BasicAttack(List<ISkillComponent> components, 
-			List<ISkillComponent.ITickable> tickables, 
-			List<ISkillComponent.IBreakable> breakables, 
-			List<ISkillComponent.IUseable> useables) 
-			: base(components, tickables, breakables, useables) { }
+    /* bindings */
 }
 ```
 
-Create a skill installer by inheriting from the SkillInstaller<T> class. Configure the skill in the SilentInstall method. You can also add parameters that can be set in the inspector later, but for this, you should create a separate class (I usually call it Settings). This is necessary because changes made in play mode won't be saved otherwise:
+In this method bind controller with state identifier:
 
 ```csharp
-public class BasicAttackInstaller : SkillInstaller<BasicAttack>
+subContainer.BindController(_prepare);
+```
+
+And bind components, for example:
+
+```csharp
+subContainer.BindComponent<Cooldown>(StateSettings.Prepare.Cooldown);
+subContainer.BindComponent<PlayAnimation>(StateSettings.Prepare.Animation);
+subContainer.BindComponent<LookIn>();
+```
+
+### Example of complicated skill installer class
+
+```csharp
+public class WorldsApartInstaller : SkillInstaller<WorldsApart>
 {
-    public Settings BasicAttackSettings;
+    public Settings StateSettings;
+    private States _states = new States();
 
-    public override void SilentInstall(DiContainer subContainer)
+    protected override void InstallStates()
     {
-        subContainer.BindInstances(BasicAttackSettings.AttackClip);
+        var baseStateSequence = _stateSequenceFactory.Create(3);
 
-        subContainer
-            .BindInterfacesTo<PlayAnimation>()
-            .AsSingle()
-            .WithArguments(ISkill.State.Action);
+        _states.Prepare = baseStateSequence.State(0);
+        _states.Charge = baseStateSequence.State(1);
+        _states.Attack = baseStateSequence.State(2);
 
-        subContainer
-            .BindInterfacesAndSelfTo<BasicAttack>()
+        var overchargeStateSequence = _stateSequenceFactory.Create(1);
+
+        _states.Overcharge = overchargeStateSequence.State(0);
+
+        Container
+            .Bind<Charge.Power>()
             .AsSingle();
+
+        Container
+            .Bind<Charge.Events>()
+            .To<WorldsApart.ChargeEvents>()
+            .FromResolve()
+            .AsSingle();
+
+        Container.BindState(PrepareState);
+        Container.BindState(ChargeState);
+        Container.BindState(AttackState);
+        Container.BindState(OverchargeState);
+    }
+
+    private void PrepareState(DiContainer subContainer)
+    {
+        subContainer.BindController(_states.Prepare);
+
+        subContainer.BindComponent<Cooldown>(StateSettings.Prepare.Cooldown);
+        subContainer.BindComponent<PlayAnimation>(StateSettings.Prepare.Animation);
+        subContainer.BindComponent<LookIn>();
+    }
+
+    private void ChargeState(DiContainer subContainer)
+    {
+        subContainer.BindController(_states.Charge);
+
+        subContainer.BindComponent<Charge>(StateSettings.Charge.Charge);
+        subContainer.BindComponent<PlayAnimation>(StateSettings.Charge.Animation);
+        subContainer.BindComponent<ChangeStateOnOvercharge>(
+            StateSettings.Charge.ChangeStateOnOvercharge,
+            _states.Overcharge
+            );
+    }
+
+    private void AttackState(DiContainer subContainer)
+    {
+        subContainer.BindController(_states.Attack);
+
+        subContainer.BindComponent<PlayAnimation>(StateSettings.Attack.Animation);
+        subContainer.BindComponent<MakeDamageByCharge>(StateSettings.Attack.Damage);
+    }
+
+    private void OverchargeState(DiContainer subContainer)
+    {
+        subContainer.BindController(_states.Overcharge);
+
+        subContainer.BindComponent<WaitSeconds>(StateSettings.Overcharge.WaitSeconds);
+        subContainer.BindComponent<PlayAnimation>(StateSettings.Overcharge.Animation);
+    }
+
+    private class States
+    {
+        public State.Identificator Prepare;
+        public State.Identificator Charge;
+        public State.Identificator Attack;
+        public State.Identificator Overcharge;
     }
 
     [Serializable]
     public class Settings
     {
-        public AnimationClip AttackClip;
+        public PrepareState Prepare;
+        public ChargeState Charge;
+        public AttackState Attack;
+        public OverchargeState Overcharge;
+
+        [Serializable]
+        public class PrepareState
+        {
+            public PlayAnimation.Settings Animation;
+            public Cooldown.Settings Cooldown;
+        }
+        [Serializable]
+        public class ChargeState
+        {
+            public PlayAnimation.Settings Animation;
+            public Charge.Settings Charge;
+            public ChangeStateOnOvercharge.Settings ChangeStateOnOvercharge;
+        }
+        [Serializable]
+        public class AttackState
+        {
+            public PlayAnimation.Settings Animation;
+            public MakeDamageByCharge.Settings Damage;
+            
+        }
+        [Serializable]
+        public class OverchargeState
+        {
+            public PlayAnimation.Settings Animation;
+            public WaitSeconds.Settings WaitSeconds;
+        }
     }
 }
 ```
@@ -67,73 +226,55 @@ After editing right-click on any folder in the Project and select Installers\Unt
 Just realize needed interfaces, at least one of them: 
 
 ```csharp
-public interface ISkillComponent
+public interface IComponent
 {
-    /// <summary>
-    /// Inform skill that this component is done.
-    /// </summary>
     public bool IsDone { get; }
 
-    public interface IUseable : ISkillComponent
+    public interface IEnterable : IComponent
     {
-        public void Use();
+        public void OnStateEnter();
     }
 
-    public interface ITickable : ISkillComponent
+    public interface ITickable : IComponent
     {
-        /// <summary>
-        /// Note that it should be set in the constructor. Without changes at runtime.
-        /// </summary>
-        public ISkill.State TargetState { get; }
-        /// <summary>
-        /// Accure every zenject tick when state of skill equals TargetState.
-        /// </summary>
         public void Tick();
     }
-    public interface IFixedTickable : ISkillComponent
+    public interface IFixedTickable : IComponent
     {
-        /// <summary>
-        /// Note that it should be set in the constructor. Without changes at runtime.
-        /// </summary>
-        public ISkill.State TargetState { get; }
-        /// <summary>
-        /// Accure every zenject fixedTick when state of skill equals TargetState.
-        /// </summary>
         public void FixedTick();
     }
-
-    public interface IBreakable : ISkillComponent
+    public interface ILateTickable : IComponent
     {
-        /// <summary>
-        /// Accure when something breaks skill. Generaly its other skill with BreakIn component.
-        /// </summary>
-        public void Break();
+        public void LateTick();
+    }
+    public interface IBreakable : IComponent
+    {
+        public void OnBreak();
     }
 }
 ```
 
 ## How to create skill sequence
 
-Same as “How to create skill” but you will inherit SkillSequence class instead Skill class and your installer will be look like this:
+Create class and inherit from Skill Sequence:
+
+```csharp
+public class BasicAttackSequence : SkillSequence { }
+```
+
+And then create installer:
 
 ```csharp
 public class BasicAttackSequenceInstaller : SkillSequenceInstaller<BasicAttackSequence>
 {
     public Settings BasicAttackSequenceSettings;
 
-    public override void SilentInstall(DiContainer subContainer)
+    protected override void ConfigureSkillSequence()
     {
-        InstallSkills(subContainer);
+        Container.BindWaitSecondsReset(
+					BasicAttackSequenceSettings.WaitSecondsResetSettings);
 
-        subContainer
-            .Bind<IResetTaskFactory>()
-            .To<WaitSecondsReset>()
-            .AsSingle()
-            .WithArguments(BasicAttackSequenceSettings.WaitSecondsResetSettings);
-
-        subContainer
-            .Bind<BasicAttackSequence>()
-            .AsSingle();
+        MakeBreakeable();
     }
 
     [Serializable]
@@ -144,7 +285,9 @@ public class BasicAttackSequenceInstaller : SkillSequenceInstaller<BasicAttackSe
 }
 ```
 
-In this example our BasicAttackSequence require IResetTaskFactory that controlls timer to sequence reset so we assign standart WaitSecondsReset. It just wait some seconds that sets in WaitSecondsReset.Settings.
+BindWaitSecondsReset bind WaitSecondsReset to skill sequence that reset sequence after seconds.
+
+MakeBreakeable make skill breakeable by others skills.
 
 ## How to create IResetTaskFactory
 
@@ -178,7 +321,7 @@ public class WaitSecondsReset : IResetTaskFactory
 ```csharp
 public class BindSkills : IInitializable
 {
-    private BasicAttackSequence _basicAttack;
+    private BasicAttackSequence _basicAttackSequence;
     private Input _input;
     private ISkillController _skillController;
 
@@ -194,72 +337,8 @@ public class BindSkills : IInitializable
 
     public void Initialize()
     {
-        _input.BasicAttack += () => { _skillController.TryUseSkill(_basicAttack); };
+        _input._basicAttackSequence += 
+					() => { _skillController.TryUseSkill(_basicAttackSequence); };
     }
 }
 ```
-
-## How to add state to skills
-
-In ISkill interface we has State class that represent ordering logic of states:
-
-```csharp
-public interface ISkill
-{
-    /* ... */
-
-    public class State
-    {
-        public static readonly State Prepare = new State();
-        public static readonly State Action = new State();
-        public static readonly State Recovery = new State();
-
-        private static List<State> _states = new List<State>
-        {
-            Prepare,
-            Action,
-            Recovery
-        };
-
-        public static State First
-        {
-            get
-            {
-                return _states.FirstOrDefault();
-            }
-        }
-
-        public State NextState
-        {
-            get
-            {
-                return _states.SkipWhile(s => s != this).Skip(1).FirstOrDefault();
-            }
-        }
-    }
-}
-```
-
-As you can see, states are represented as static objects and sorted by the _states list. Simply make modifications in this class to utilize the new skill state.
-
-## Skills Components
-
-### PlayAnimation
-
-Needs state of skill when to play animation, AniMateComponent on that clip will play and clip itself:
-
-```csharp
-public PlayAnimation(
-    ISkill.State targetState, 
-    AniMateComponent animate, 
-    AnimationClip clip) 
-{ 
-	/* ... */ 
-}
-```
-
-Component is considered completed when the clip has ended.
-
-### BreakIn
-
-Add this component to the skill and on use, it will break the current skill. However, it does not break its own skill.
