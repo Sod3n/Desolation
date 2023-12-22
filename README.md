@@ -8,3 +8,4 @@
 - Unitask
 - Addresables
 - Input System
+- [AniMate](https://github.com/Sod3n/AniMate)
