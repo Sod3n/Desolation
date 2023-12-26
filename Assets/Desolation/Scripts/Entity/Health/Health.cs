@@ -29,6 +29,7 @@ public class Health : IDamagable, IInitializable
 
     public void TakeDamage(int amount)
     {
+        Debug.Log("Damage");
         int adjustedDamage = Mathf.RoundToInt(amount * (1 - HealthSettings.DamageResistance));
         ModifyHealth(-adjustedDamage);
     }
