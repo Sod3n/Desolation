@@ -35,15 +35,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TakeDamageTest"",
-                    ""type"": ""Button"",
-                    ""id"": ""4429ff27-1f7f-42a5-8220-156ae113eabb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,17 +103,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1d18f275-7eee-4495-8a31-04a195ad70f4"",
-                    ""path"": ""<Keyboard>/h"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TakeDamageTest"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -138,7 +118,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_TakeDamageTest = m_Gameplay.FindAction("TakeDamageTest", throwIfNotFound: true);
         // GameMap
         m_GameMap = asset.FindActionMap("GameMap", throwIfNotFound: true);
     }
@@ -203,13 +182,11 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Gameplay;
     private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
     private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_TakeDamageTest;
     public struct GameplayActions
     {
         private @Controlls m_Wrapper;
         public GameplayActions(@Controlls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @TakeDamageTest => m_Wrapper.m_Gameplay_TakeDamageTest;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -222,9 +199,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
-            @TakeDamageTest.started += instance.OnTakeDamageTest;
-            @TakeDamageTest.performed += instance.OnTakeDamageTest;
-            @TakeDamageTest.canceled += instance.OnTakeDamageTest;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -232,9 +206,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
-            @TakeDamageTest.started -= instance.OnTakeDamageTest;
-            @TakeDamageTest.performed -= instance.OnTakeDamageTest;
-            @TakeDamageTest.canceled -= instance.OnTakeDamageTest;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -293,7 +264,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnTakeDamageTest(InputAction.CallbackContext context);
     }
     public interface IGameMapActions
     {

@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "TakeDamageTest",
-                    "type": "Button",
-                    "id": "4429ff27-1f7f-42a5-8220-156ae113eabb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -88,17 +79,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1d18f275-7eee-4495-8a31-04a195ad70f4",
-                    "path": "<Keyboard>/h",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "TakeDamageTest",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
