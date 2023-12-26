@@ -8,7 +8,6 @@ namespace Player
     public class Input : ITickable, IInitializable
     {
         public Vector3 MovementDirection { get; private set; }
-        public bool TestTakeDamage;
 
         private Controlls _controlls;
 
