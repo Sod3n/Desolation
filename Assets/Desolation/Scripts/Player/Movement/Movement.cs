@@ -26,7 +26,7 @@ namespace Player
 
         public void Move()
         {
-            _characterController.Move(MovementDirection * _settings.MoveSpeed * Time.deltaTime);
+            _characterController.Move(MovementDirection * _settings.UnitsPerSeconds * Time.fixedDeltaTime);
 
             _characterController.transform.rotation = Quaternion.Slerp(_characterController.transform.rotation, Quaternion.LookRotation(MovementDirection), _settings.RotationSmooth);
         }
@@ -34,7 +34,7 @@ namespace Player
         [Serializable]
         public class Settings // Заменить на SO?
         {
-            public float MoveSpeed = 50f;
+            public float UnitsPerSeconds = 50f;
             public float RotationSmooth = 0.15f;
             public Vector3 MovementDirection;
         }
