@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: metarig.001|deer_attack
+      name: metarig001|deer_attack
       takeName: metarig.001|deer_attack
       internalID: 365576915146749378
       firstFrame: 0
@@ -62,7 +62,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig.001|deer_death
+      name: metarig001|deer_death
       takeName: metarig.001|deer_death
       internalID: -6764179178319803162
       firstFrame: 0
@@ -91,7 +91,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig.001|deer_idle
+      name: metarig001|deer_idle
       takeName: metarig.001|deer_idle
       internalID: 717761985068237402
       firstFrame: 0
@@ -120,7 +120,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig.001|deer_run
+      name: metarig001|deer_run
       takeName: metarig.001|deer_run
       internalID: -5716051849041595366
       firstFrame: 0
@@ -149,7 +149,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig.001|deer_takedamage
+      name: metarig001|deer_takedamage
       takeName: metarig.001|deer_takedamage
       internalID: 3069940661302413855
       firstFrame: 0
@@ -178,7 +178,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: metarig.001|deer_walk
+      name: metarig001|deer_walk
       takeName: metarig.001|deer_walk
       internalID: 62911407464613101
       firstFrame: 0

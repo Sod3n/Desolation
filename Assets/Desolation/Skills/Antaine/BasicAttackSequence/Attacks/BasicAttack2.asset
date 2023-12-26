@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cea8dbb9f801a6439f8b89298d974e2, type: 3}
+  m_Name: BasicAttack2
+  m_EditorClassIdentifier: 
+  StateSettings:
+    Action:
+      Animation:
+        Clip: {fileID: -3928707721757641659, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}
+        WaitClipEnd: 1
+      MoveForward:
+        UnitsPerSecond: 2
+      MakeDamage:
+        DamageScale: 1
+        DamageZone: {fileID: 4631166471603675953, guid: d0c1182823b7ce248a11acdf9b97ed04, type: 3}
