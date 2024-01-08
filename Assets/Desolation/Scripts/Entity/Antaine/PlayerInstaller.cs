@@ -1,19 +1,23 @@
 using AniMate;
-using Entity.Skills;
+using Desolation.Entity.Skills;
+using Desolation.StatePattern;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using Zenject;
 using ZenjectExtender;
 
-namespace Entity.Antaine
+namespace Desolation.Entity.Antaine
 {
     public class PlayerInstaller : MonoInstaller
     {
         public AniMateComponent AniMateComponent;
         public Transform Transform;
         public CharacterController CharacterController;
+
+        public IdleInstaller IdleInstaller;
 
         public WorldsApartInstaller WorldsApartInstaller;
         public WingsOfNightInstaller WingsOfNightInstaller;
@@ -25,51 +29,91 @@ namespace Entity.Antaine
             Container
                 .BindInstances(AniMateComponent, Transform, CharacterController);
 
-            Container
-                .BindInterfacesAndSelfTo<Input>()
-                .AsSingle();
 
             Container
-                .BindInterfacesTo<SkillController>()
-                .AsSingle();
+                .BindInterfacesAndSelfTo<StateController>()
+                .AsCached();
 
             Container
-                .Bind<WorldsApart.ChargeEvents>()
+                .BindInterfacesAndSelfTo<Idle>()
+                .FromSubContainerResolve()
+                .ByNewGameObjectScriptableInstaller(IdleInstaller)
+                .AsCached()
+                .WhenNotInjectedInto<TransitionSequence>();
+
+            
+
+            Container
+                .BindInterfacesAndSelfTo<StateTickableManager>()
+                .AsCached();
+
+
+            Container
+                .Bind<WorldsApart.ChargeActions>()
                 .AsSingle();
+
 
             Container
                 .Bind<LookIn.Direction>()
                 .AsSingle();
 
+
             Container
-                .BindInterfacesTo<BindInput>()
+                .BindInterfacesAndSelfTo<Input>()
                 .AsSingle();
 
             Container
-                .Bind<WorldsApart>()
-                .FromSubContainerResolve()
-                .ByNewGameObjectScriptableInstaller(WorldsApartInstaller)
-                .AsCached();
+                .BindInterfacesAndSelfTo<TrackMouseInput>()
+                .AsSingle();
 
             Container
-                .Bind<WingsOfNight>()
-                .FromSubContainerResolve()
-                .ByNewGameObjectScriptableInstaller(WingsOfNightInstaller)
-                .AsCached();
+                .BindInterfacesAndSelfTo<TrackWorldApartCharge>()
+                .AsSingle();
 
             Container
-                .Bind<DemonicSweep>()
-                .FromSubContainerResolve()
-                .ByNewGameObjectScriptableInstaller(DemonicSweepInstaller)
-                .AsCached();
+                .BindInterfacesAndSelfTo<TrackSkillsTransitionGroup>()
+                .FromSubContainerResolveAll()
+                .ByMethod(BindSkillsTransitor)
+                .AsSingle();
 
-            Container
-                .Bind<BasicAttackSequence>()
-                .FromSubContainerResolve()
-                .ByNewGameObjectScriptableInstaller(BasicAttackSequenceInstaller)
-                .AsCached();
         }
 
-        
+        private void BindSkillsTransitor(DiContainer subContainer)
+        {
+
+            subContainer
+                .BindInterfacesAndSelfTo<TrackSkillsTransitionGroup>()
+                .AsSingle();
+
+
+
+            subContainer
+                .BindInterfacesAndSelfTo<WorldsApart>()
+                .FromSubContainerResolve()
+                .ByNewGameObjectScriptableInstaller(WorldsApartInstaller)
+                .AsCached()
+                .WhenInjectedInto<TrackSkillsTransitionGroup>();
+
+            subContainer
+                .BindInterfacesAndSelfTo<WingsOfNight>()
+                .FromSubContainerResolve()
+                .ByNewGameObjectScriptableInstaller(WingsOfNightInstaller)
+                .AsCached()
+                .WhenInjectedInto<TrackSkillsTransitionGroup>();
+
+            subContainer
+                .BindInterfacesAndSelfTo<DemonicSweep>()
+                .FromSubContainerResolve()
+                .ByNewGameObjectScriptableInstaller(DemonicSweepInstaller)
+                .AsCached()
+                .WhenInjectedInto<TrackSkillsTransitionGroup>();
+
+            subContainer
+                .BindInterfacesAndSelfTo<BasicAttackSequence>()
+                .FromSubContainerResolve()
+                .ByNewGameObjectScriptableInstaller(BasicAttackSequenceInstaller)
+                .AsCached()
+                .WhenInjectedInto<TrackSkillsTransitionGroup>();
+        }
     }
 }

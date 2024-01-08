@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace Entity.Antaine
+namespace Desolation.Entity.Antaine
 {
     public class Input : IInitializable, ITickable
     {
@@ -25,11 +25,11 @@ namespace Entity.Antaine
 
         public void Initialize()
         {
-            _controlls.GameMap.BasicAttack.started += (_) => { BasicAttack.Invoke(); };
-            _controlls.GameMap.SkillOne.started += (_) => { SkillOne.Invoke(); };
-            _controlls.GameMap.SkillTwo.started += (_) => { SkillTwo.Invoke(); };
-            _controlls.GameMap.SkillThree.started += (_) => { SkillThree.Invoke(); };
-            _controlls.GameMap.SkillThree.canceled += (_) => { SkillThreeReleased.Invoke(); };
+            _controlls.GameMap.BasicAttack.started += (_) => BasicAttack.Invoke();
+            _controlls.GameMap.SkillOne.started += (_) => SkillOne.Invoke();
+            _controlls.GameMap.SkillTwo.started += (_) => SkillTwo.Invoke();
+            _controlls.GameMap.SkillThree.started += (_) => SkillThree.Invoke();
+            _controlls.GameMap.SkillThree.canceled += (_) => SkillThreeReleased.Invoke();
         }
 
         public void Tick()

@@ -29,6 +29,8 @@ namespace Zenject
 
         void AddTaskInternal(TTask task, int priority)
         {
+            if(task == null) return;
+
             Assert.That(!AllTasks.Select(x => x.Task).ContainsItem(task),
                 "Duplicate task added to DependencyRoot with name '" + task.GetType().FullName + "'");
 

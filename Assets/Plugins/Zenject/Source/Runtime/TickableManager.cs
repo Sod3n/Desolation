@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using ModestTree;
 using ModestTree.Util;
+using UnityEngine;
 #if ZEN_SIGNALS_ADD_UNIRX
 using UniRx;
 #endif

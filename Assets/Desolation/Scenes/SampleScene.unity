@@ -586,6 +586,7 @@ MonoBehaviour:
   AniMateComponent: {fileID: 1649025285}
   Transform: {fileID: 1586643482}
   CharacterController: {fileID: 1586643479}
+  IdleInstaller: {fileID: 11400000, guid: 033a6e80cdd620b46b055ef42b52ab0c, type: 2}
   WorldsApartInstaller: {fileID: 11400000, guid: 5b63453a9dc791d4ea5ebd21199e1ebc, type: 2}
   WingsOfNightInstaller: {fileID: 11400000, guid: e166d269c00c2224a90f076bac3f1ffe, type: 2}
   DemonicSweepInstaller: {fileID: 11400000, guid: 909e518f7664ec0419958018cce873a4, type: 2}
@@ -2187,7 +2188,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 1649025288}
-  _previewClip: {fileID: 0}
 --- !u!95 &1649025288
 Animator:
   serializedVersion: 5
