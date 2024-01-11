@@ -24,6 +24,12 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     ""name"": ""Controlls"",
     ""maps"": [
         {
+            ""name"": ""GameMap"",
+            ""id"": ""f7b04bd8-ed3a-4238-9a31-d70b6c9e48a0"",
+            ""actions"": [],
+            ""bindings"": []
+        },
+        {
             ""name"": ""Gameplay"",
             ""id"": ""aad6f669-2668-4cf7-8119-2dd6a2c54bcb"",
             ""actions"": [
@@ -35,15 +41,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""TakeDamageTest"",
-                    ""type"": ""Button"",
-                    ""id"": ""4429ff27-1f7f-42a5-8220-156ae113eabb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -112,35 +109,17 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""1d18f275-7eee-4495-8a31-04a195ad70f4"",
-                    ""path"": ""<Keyboard>/h"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""TakeDamageTest"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
                 }
             ]
-        },
-        {
-            ""name"": ""GameMap"",
-            ""id"": ""f7b04bd8-ed3a-4238-9a31-d70b6c9e48a0"",
-            ""actions"": [],
-            ""bindings"": []
         }
     ],
     ""controlSchemes"": []
 }");
+        // GameMap
+        m_GameMap = asset.FindActionMap("GameMap", throwIfNotFound: true);
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Movement = m_Gameplay.FindAction("Movement", throwIfNotFound: true);
-        m_Gameplay_TakeDamageTest = m_Gameplay.FindAction("TakeDamageTest", throwIfNotFound: true);
-        // GameMap
-        m_GameMap = asset.FindActionMap("GameMap", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -199,60 +178,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // Gameplay
-    private readonly InputActionMap m_Gameplay;
-    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-    private readonly InputAction m_Gameplay_Movement;
-    private readonly InputAction m_Gameplay_TakeDamageTest;
-    public struct GameplayActions
-    {
-        private @Controlls m_Wrapper;
-        public GameplayActions(@Controlls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
-        public InputAction @TakeDamageTest => m_Wrapper.m_Gameplay_TakeDamageTest;
-        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
-        public void AddCallbacks(IGameplayActions instance)
-        {
-            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-            @Movement.started += instance.OnMovement;
-            @Movement.performed += instance.OnMovement;
-            @Movement.canceled += instance.OnMovement;
-            @TakeDamageTest.started += instance.OnTakeDamageTest;
-            @TakeDamageTest.performed += instance.OnTakeDamageTest;
-            @TakeDamageTest.canceled += instance.OnTakeDamageTest;
-        }
-
-        private void UnregisterCallbacks(IGameplayActions instance)
-        {
-            @Movement.started -= instance.OnMovement;
-            @Movement.performed -= instance.OnMovement;
-            @Movement.canceled -= instance.OnMovement;
-            @TakeDamageTest.started -= instance.OnTakeDamageTest;
-            @TakeDamageTest.performed -= instance.OnTakeDamageTest;
-            @TakeDamageTest.canceled -= instance.OnTakeDamageTest;
-        }
-
-        public void RemoveCallbacks(IGameplayActions instance)
-        {
-            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IGameplayActions instance)
-        {
-            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public GameplayActions @Gameplay => new GameplayActions(this);
-
     // GameMap
     private readonly InputActionMap m_GameMap;
     private List<IGameMapActions> m_GameMapActionsCallbackInterfaces = new List<IGameMapActions>();
@@ -290,12 +215,57 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         }
     }
     public GameMapActions @GameMap => new GameMapActions(this);
+
+    // Gameplay
+    private readonly InputActionMap m_Gameplay;
+    private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
+    private readonly InputAction m_Gameplay_Movement;
+    public struct GameplayActions
+    {
+        private @Controlls m_Wrapper;
+        public GameplayActions(@Controlls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Movement => m_Wrapper.m_Gameplay_Movement;
+        public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(GameplayActions set) { return set.Get(); }
+        public void AddCallbacks(IGameplayActions instance)
+        {
+            if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
+            @Movement.started += instance.OnMovement;
+            @Movement.performed += instance.OnMovement;
+            @Movement.canceled += instance.OnMovement;
+        }
+
+        private void UnregisterCallbacks(IGameplayActions instance)
+        {
+            @Movement.started -= instance.OnMovement;
+            @Movement.performed -= instance.OnMovement;
+            @Movement.canceled -= instance.OnMovement;
+        }
+
+        public void RemoveCallbacks(IGameplayActions instance)
+        {
+            if (m_Wrapper.m_GameplayActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IGameplayActions instance)
+        {
+            foreach (var item in m_Wrapper.m_GameplayActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_GameplayActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public GameplayActions @Gameplay => new GameplayActions(this);
+    public interface IGameMapActions
+    {
+    }
     public interface IGameplayActions
     {
         void OnMovement(InputAction.CallbackContext context);
-        void OnTakeDamageTest(InputAction.CallbackContext context);
-    }
-    public interface IGameMapActions
-    {
     }
 }
