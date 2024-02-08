@@ -1,4 +1,3 @@
-using Desolation.StatePattern;
 using log4net.Util;
 using System;
 using System.Collections;
@@ -9,28 +8,16 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class MoveForward : IStateComponent.IFixedTickable
+    public class MoveForward : StateBehaviour
     {
-        private Settings _settings;
-        private CharacterController _characterController;
+        [Inject] private Rigidbody _rigidbody;
 
+        [SerializeField] private float _unitsPerSecond;
 
-        public MoveForward(CharacterController characterController, Settings settings)
+        private void FixedUpdate()
         {
-            _characterController = characterController;
-            _settings = settings;
-        }
-
-        public void FixedTick()
-        {
-            _characterController.Move(
-                _characterController.transform.forward * _settings.UnitsPerSecond * Time.fixedDeltaTime);
-        }
-
-        [Serializable]
-        public class Settings
-        {
-            public float UnitsPerSecond;
+            _rigidbody.MovePosition(
+                _rigidbody.transform.position + _rigidbody.transform.forward * _unitsPerSecond * Time.fixedDeltaTime);
         }
     }
 }

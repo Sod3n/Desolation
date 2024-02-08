@@ -7,16 +7,11 @@ namespace Desolation.StatePattern
 {
     public class MakeDamageByCharge : MakeDamage
     {
-        private Charge.Power _charge;
-        public MakeDamageByCharge(Transform transform, Settings settings, Charge.Power charge)
-            : base( transform, settings)
-        {
-            _charge = charge;
-        }
+        [SerializeField] private Charge _charge;
 
-        public override void FixedTick()
+        protected override void Damage(Collider collider)
         {
-            DamageAllInDamageZone(_settings.DamageScale + _charge.Value);
+            Debug.Log("Damage " + collider.name + " with damage scale: " + (_damageScale * _charge.Power));
         }
     }
 }

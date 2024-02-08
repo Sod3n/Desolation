@@ -8,40 +8,27 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class Cooldown : IStateComponent.IEnterable
+    public class Cooldown : StateBehaviour
     {
-        private Settings _settings;
-        private LazyInject<IStateController> _controller;
+        [SerializeField] private float _time;
 
-        public Cooldown(Settings settings, LazyInject<IStateController> controller)
-        {
-            _settings = settings;
-            _controller = controller;
-        }
         private UniTask _task;
-        private float _currentValue;
+        private float _remainingTime;
 
-        public event Action OnEnteredWhenInColldown = () => { };
+        public UniTask Task { get { return _task; } }
+        public float RemainingTime { get => _remainingTime; }
 
-        public void OnEnter()
+        public override void OnEnter()
         {
-            if (!_task.Status.IsCompleted())
-            {
-                OnEnteredWhenInColldown.Invoke();
-
-                Debug.Log("In cooldown " + _currentValue);
-                return;
-            }
-
-            _currentValue = _settings.Value;
+            _remainingTime = _time;
             _task = DecreaseCurrentValue();
         }
 
         private async UniTask DecreaseCurrentValue()
         {
-            while (_currentValue > 0)
+            while (_remainingTime > 0)
             {
-                _currentValue -= Time.deltaTime;
+                _remainingTime -= Time.deltaTime;
                 await UniTask.NextFrame();
             }
         }

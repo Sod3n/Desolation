@@ -6,25 +6,16 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class LookIn : IStateComponent.IFixedTickable
+    public class LookIn : StateBehaviour
     {
-        private Direction _direction;
-        private Transform _transform;
+        [Inject] private Transform _transform;
 
-        public LookIn(Direction direction, Transform transform)
-        {
-            _direction = direction;
-            _transform = transform;
-        }
+        [SerializeField]private Vector3 _direction;
+        
 
         public void FixedTick()
         {
-            _transform.rotation = Quaternion.LookRotation(_direction.Value);
-        }
-
-        public class Direction
-        {
-            public Vector3 Value;
+            _transform.rotation = Quaternion.LookRotation(_direction);
         }
     }
 }

@@ -71,6 +71,15 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveVector"",
+                    ""type"": ""Value"",
+                    ""id"": ""9c82b41e-13e5-4fd4-9ff2-ad6e87213733"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -128,6 +137,61 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
                     ""action"": ""AimPoint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""2D Vector"",
+                    ""id"": ""f652512e-f219-4e58-8401-9b4ae379006f"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveVector"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8748a086-b170-43d9-81ab-a4922ccd391a"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveVector"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""5ab61923-2695-42ba-b335-3ffd97ebf1fa"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveVector"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""0a86952f-8393-4b17-a53b-217a4bae10e2"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveVector"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""53ba622d-7bf6-47e5-bec6-5c706340030c"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MoveVector"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -141,6 +205,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         m_GameMap_SkillTwo = m_GameMap.FindAction("SkillTwo", throwIfNotFound: true);
         m_GameMap_SkillThree = m_GameMap.FindAction("SkillThree", throwIfNotFound: true);
         m_GameMap_AimPoint = m_GameMap.FindAction("AimPoint", throwIfNotFound: true);
+        m_GameMap_MoveVector = m_GameMap.FindAction("MoveVector", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -207,6 +272,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
     private readonly InputAction m_GameMap_SkillTwo;
     private readonly InputAction m_GameMap_SkillThree;
     private readonly InputAction m_GameMap_AimPoint;
+    private readonly InputAction m_GameMap_MoveVector;
     public struct GameMapActions
     {
         private @Controlls m_Wrapper;
@@ -216,6 +282,7 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         public InputAction @SkillTwo => m_Wrapper.m_GameMap_SkillTwo;
         public InputAction @SkillThree => m_Wrapper.m_GameMap_SkillThree;
         public InputAction @AimPoint => m_Wrapper.m_GameMap_AimPoint;
+        public InputAction @MoveVector => m_Wrapper.m_GameMap_MoveVector;
         public InputActionMap Get() { return m_Wrapper.m_GameMap; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -240,6 +307,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @AimPoint.started += instance.OnAimPoint;
             @AimPoint.performed += instance.OnAimPoint;
             @AimPoint.canceled += instance.OnAimPoint;
+            @MoveVector.started += instance.OnMoveVector;
+            @MoveVector.performed += instance.OnMoveVector;
+            @MoveVector.canceled += instance.OnMoveVector;
         }
 
         private void UnregisterCallbacks(IGameMapActions instance)
@@ -259,6 +329,9 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
             @AimPoint.started -= instance.OnAimPoint;
             @AimPoint.performed -= instance.OnAimPoint;
             @AimPoint.canceled -= instance.OnAimPoint;
+            @MoveVector.started -= instance.OnMoveVector;
+            @MoveVector.performed -= instance.OnMoveVector;
+            @MoveVector.canceled -= instance.OnMoveVector;
         }
 
         public void RemoveCallbacks(IGameMapActions instance)
@@ -283,5 +356,6 @@ public partial class @Controlls: IInputActionCollection2, IDisposable
         void OnSkillTwo(InputAction.CallbackContext context);
         void OnSkillThree(InputAction.CallbackContext context);
         void OnAimPoint(InputAction.CallbackContext context);
+        void OnMoveVector(InputAction.CallbackContext context);
     }
 }

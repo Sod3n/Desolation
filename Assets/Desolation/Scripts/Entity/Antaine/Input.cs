@@ -6,36 +6,39 @@ using Zenject;
 
 namespace Desolation.Entity.Antaine
 {
-    public class Input : IInitializable, ITickable
+    public class Input : MonoBehaviour
     {
+        [Inject] private Controlls _controlls;
+
         public event Action BasicAttack = () => { };
         public event Action SkillOne = () => { };
         public event Action SkillTwo = () => { };
         public event Action SkillThree = () => { };
         public event Action SkillThreeReleased = () => { };
+        public event Action Moving = () => { };
+        public event Action NotMoving = () => { };
 
         public Vector3 WorldAimPoint;
 
-        private Controlls _controlls;
-
-        public Input(Controlls controlls)
-        {
-            _controlls = controlls;
-        }
-
-        public void Initialize()
+        private void Start()
         {
             _controlls.GameMap.BasicAttack.started += (_) => BasicAttack.Invoke();
             _controlls.GameMap.SkillOne.started += (_) => SkillOne.Invoke();
             _controlls.GameMap.SkillTwo.started += (_) => SkillTwo.Invoke();
             _controlls.GameMap.SkillThree.started += (_) => SkillThree.Invoke();
             _controlls.GameMap.SkillThree.canceled += (_) => SkillThreeReleased.Invoke();
+            
         }
 
-        public void Tick()
+        private void Update()
         {
             WorldAimPoint = _controlls.GameMap.AimPoint.ReadValue<Vector2>();
             WorldAimPoint = ScreenToWorldPointOnYSurface(WorldAimPoint);
+
+            if (_controlls.GameMap.MoveVector.IsInProgress())
+                Moving.Invoke();
+            else
+                NotMoving.Invoke();
         }
 
 

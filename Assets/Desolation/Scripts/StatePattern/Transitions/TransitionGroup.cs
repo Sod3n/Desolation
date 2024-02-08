@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public abstract class TransitionGroup : ITransitionGroup
+    public class TransitionGroup : AbstractTransition
     {
-        [Inject] private List<ITransition> _transitions = new List<ITransition>();
+        [SerializeField] private List<AbstractTransition> _transitions;
 
-        public void AddTransitionsToState(IState state)
+        public override List<TransitionData> AddTransitionDataToList(List<TransitionData> list)
         {
-            state.Transitions.AddRange(_transitions);
+            _transitions.ForEach(x => x.AddTransitionDataToList(list));
+            return list;
         }
 
-        public void ExceptTransitionsFromState(IState state)
+        public override int GetMaxTransitionCount()
         {
-            state.Transitions = state.Transitions.Except(_transitions).ToList();
+            int count = 0;
+            _transitions.ForEach(_x => count += _x.GetMaxTransitionCount()); 
+            return count; 
         }
     }
 }

@@ -1,3 +1,4 @@
+
 using Desolation.StatePattern;
 using System;
 using System.Collections;
@@ -7,32 +8,21 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class Overcharge : IStateComponent.IFixedTickable
+    public class Overcharge : StateBehaviour
     {
-        private Charge.Power _power;
-        private Settings _settings;
-
-        public Overcharge(Settings settings, Charge.Power power)
-        {
-            _power = power;
-            _settings = settings;
-        }
+        [SerializeField] private Charge _charge;
+        [SerializeField] private float _overchargeThreshold;
 
         public event Action OnOvercharged;
 
-        public void FixedTick()
+        private void FixedUpdate()
         {
-            if(_power.Value >= _settings.OverchargeThreshold)
+            
+            if (_charge.Power >= _overchargeThreshold)
             {
                 Debug.Log("Overcharge");
                 OnOvercharged.Invoke();
             }
-        }
-
-        [Serializable]
-        public class Settings
-        {
-            public float OverchargeThreshold;
         }
     }
 }

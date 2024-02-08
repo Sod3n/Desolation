@@ -1,5 +1,4 @@
 using AniMate;
-using Cysharp.Threading.Tasks;
 using Desolation.StatePattern;
 using System;
 using System.Collections;
@@ -12,32 +11,23 @@ namespace Desolation.StatePattern
     /// <summary>
     /// Component become done when on clip end. 
     /// </summary>
-    public class PlayAnimation : IStateComponent.IEnterable
+    public class PlayAnimation : StateBehaviour
     {
-        private AniMateComponent _animate;
-        private Settings _settings;
+        [Inject] private AniMateComponent _animate;
+        [SerializeField] private AnimationClip _clip;
+        [SerializeField] private bool _useDefaultDuration = true;
+        [SerializeField] private float _clipDuration;
 
-        public PlayAnimation(
-            AniMateComponent animate,
-            Settings settings)
+        public event Action OnPlayed = () => { };
+
+        public override void OnEnter()
         {
-            _animate = animate;
-            _settings = settings;
-        }
+            var state = _animate.Play(_clip);
 
-        public event Action OnPlayed;
+            if(!_useDefaultDuration)
+                state.Duration = _clipDuration;
 
-        public void OnEnter()
-        {
-            var state = _animate.Play(_settings.Clip);
-
-            state.OnEnd += OnPlayed;
-        }
-
-        [Serializable]
-        public class Settings
-        {
-            public AnimationClip Clip;
+            state.OnEnd += () => OnPlayed.Invoke();
         }
     }
 }

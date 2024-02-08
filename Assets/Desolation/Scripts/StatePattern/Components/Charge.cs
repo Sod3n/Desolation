@@ -1,4 +1,3 @@
-using Cysharp.Threading.Tasks;
 using Desolation.StatePattern;
 using System;
 using System.Collections;
@@ -8,43 +7,20 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class Charge :
-        IStateComponent.IEnterable,
-        IStateComponent.IFixedTickable
+    public class Charge : StateBehaviour
     {
-        private Power _power;
-        private Settings _settings;
+        [SerializeField] private float _powerIncreasePerSecond;
 
-        public Charge(Power power, Settings settings)
+        public float Power { get; set; }
+
+        public override void OnEnter()
         {
-            _power = power;
-            _settings = settings;
+            Power = 0;
         }
 
-        public void OnEnter()
+        private void FixedUpdate()
         {
-            _power.Value = 0;
-        }
-
-        public void FixedTick()
-        {
-            _power.Value += _settings.PowerIncreasePerSecond * Time.deltaTime;
-        }
-
-        public class Actions
-        {
-            public Action OnChargeInterapted;
-        }
-
-        public class Power
-        {
-            public float Value { get; set; }
-        }
-
-        [Serializable]
-        public class Settings
-        {
-            public float PowerIncreasePerSecond;
+            Power += _powerIncreasePerSecond * Time.deltaTime;
         }
     }
 }

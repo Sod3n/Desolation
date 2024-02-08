@@ -1,32 +1,28 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class Transition : ITransition
+    public class Transition : AbstractTransition
     {
-        protected IStateController _stateController;
-        public IState TargetState { get; set; }
-
-        public event ITransition.Invoked OnInvoked = _ => { };
-
-        public Transition(IState targetState, IStateController stateController)
+        [SerializeField] private TransitionData _transitionData;
+        public override List<TransitionData> AddTransitionDataToList(List<TransitionData> list)
         {
-            TargetState = targetState;
-            _stateController = stateController;
+            list.Add(_transitionData);
+            return list;
         }
 
-        public virtual void Invoke()
+        public override int GetMaxTransitionCount()
         {
-            var fromState = _stateController.CurrentState;
+            return 1;
+        }
 
-            _stateController.CurrentState = TargetState;
-            if(_stateController.CurrentState == TargetState)
-                OnInvoked.Invoke(fromState);
+        [Inject]
+        private void Initialize()
+        {
+            _transitionData.EventReference.Initialize();
         }
     }
 }
