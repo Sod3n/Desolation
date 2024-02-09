@@ -1,0 +1,23 @@
+{
+    "name": "Desolation.Entity.Antaine",
+    "rootNamespace": "",
+    "references": [
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:46cd44c358821e74b9d3bc44d5f8138a",
+        "GUID:75469ad4d38634e559750d17036d5f7c",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:eea6a5785352f514284a45b572799913",
+        "GUID:be1be643fca04c846a9fd657b9279e97",
+        "GUID:9fbe4e4c40a033b4f9491bd0629293b7",
+        "GUID:7d80794d354d21043962488e6191c15b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

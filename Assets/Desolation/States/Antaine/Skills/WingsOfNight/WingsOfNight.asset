@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a1ab43feadb4a4c917c095106839bf, type: 3}
+  m_Name: WingsOfNight
+  m_EditorClassIdentifier: 
+  StateSettings:
+    Action:
+      Animation:
+        Clip: {fileID: -4544348295636322209, guid: e03151caac2e3a64e8bd60dabc3f1b0f, type: 3}
+        WaitClipEnd: 1
+      MoveForward:
+        UnitsPerSecond: 3

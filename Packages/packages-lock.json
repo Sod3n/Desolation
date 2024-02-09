@@ -12,7 +12,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "427c0039261debab2c00b7b9f3bd8b9e93bb7fef"
+      "hash": "5c392b7c4ee88e7eb49c3c8ec8928a5a6b9bb10c"
+    },
+    "com.nenpotato.hierarchicalstatpattern": {
+      "version": "https://github.com/Sod3n/Hierarchical-State-Pattern.git?path=/Assets/Plugins/HierarchicalStatePattern",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "a0aef6c4b38ef0617dcff510d42a72dd72a58063"
     },
     "com.unity.addressables": {
       "version": "1.21.19",
