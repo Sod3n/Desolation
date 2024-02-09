@@ -1,3 +1,4 @@
+using HierarchicalStatePattern;
 using log4net.Util;
 using System;
 using System.Collections;

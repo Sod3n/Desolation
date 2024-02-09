@@ -2,12 +2,9 @@
     "name": "Desolation.StatePattern",
     "rootNamespace": "",
     "references": [
-        "GUID:129ffdb905e932445b709c3275f09c63",
-        "GUID:eea6a5785352f514284a45b572799913",
-        "GUID:f3df97e247d08454eb05c60f888fef71",
-        "GUID:46cd44c358821e74b9d3bc44d5f8138a",
-        "GUID:75469ad4d38634e559750d17036d5f7c",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:9fbe4e4c40a033b4f9491bd0629293b7",
+        "GUID:eea6a5785352f514284a45b572799913"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
