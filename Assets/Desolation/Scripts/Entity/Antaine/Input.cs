@@ -36,7 +36,10 @@ namespace Desolation.Entity.Antaine
             WorldAimPoint = ScreenToWorldPointOnYSurface(WorldAimPoint);
 
             if (_controlls.GameMap.MoveVector.IsInProgress())
+            {
+                Debug.Log("H");
                 Moving.Invoke();
+            }
             else
                 NotMoving.Invoke();
         }

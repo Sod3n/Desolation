@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3232438421892246542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7439431186497289348}
+  - component: {fileID: 7018442494880154173}
+  - component: {fileID: 1235998591317900951}
+  - component: {fileID: 5148515994901643709}
+  - component: {fileID: 6681643618453306430}
+  - component: {fileID: 515644684591502123}
+  - component: {fileID: 6662019605696324596}
+  m_Layer: 0
+  m_Name: moveState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7439431186497289348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7018442494880154173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1235998591317900951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b894246951e4944d81af1681471d330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _references: []
+  _transitions:
+    Value:
+    - Name: idleState
+      State: {fileID: 0}
+      EventReference:
+        _eventAsset: {fileID: 0}
+        _eventField: NotMoving
+      Conditions: []
+--- !u!114 &5148515994901643709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feaf71b9f71915848a27a8f2d970b420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _direction: {fileID: 0}
+  _magicRotationSpeed: 10
+--- !u!114 &6681643618453306430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e9c43529ca674468d8d252bd1f4d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionData:
+    Name: State
+    State: {fileID: 7018442494880154173}
+    EventReference:
+      _eventAsset: {fileID: 0}
+      _eventField: Moving
+    Conditions: []
+--- !u!114 &515644684591502123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _clip: {fileID: -5716051849041595366, guid: 69a7f4299d0e0a945aa85c8fd9f7e9cb, type: 3}
+  _useDefaultDuration: 1
+  _clipDuration: 0
+--- !u!114 &6662019605696324596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232438421892246542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3b8816d04d8f94ea745d7ed005ace7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unitsPerSecond: 3.5

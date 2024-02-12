@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5732946444391760113, guid: 74c15023bfa7f5e46bfbc54f17273959, type: 3}
       propertyPath: m_Name
-      value: State
+      value: IdleState
+      objectReference: {fileID: 0}
+    - target: {fileID: 5732946444391760113, guid: 74c15023bfa7f5e46bfbc54f17273959, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7255271920070121263, guid: 74c15023bfa7f5e46bfbc54f17273959, type: 3}
       propertyPath: m_LocalPosition.x

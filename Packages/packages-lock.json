@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5c392b7c4ee88e7eb49c3c8ec8928a5a6b9bb10c"
+      "hash": "38594998edbcd4fd86c4809948c73d763e33c329"
     },
     "com.nenpotato.hierarchicalstatpattern": {
       "version": "https://github.com/Sod3n/Hierarchical-State-Pattern.git?path=/Assets/Plugins/HierarchicalStatePattern",
@@ -120,6 +120,17 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.probuilder": {
+      "version": "5.2.2",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.modules.physics": "1.0.0",
+        "com.unity.modules.imgui": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.scriptablebuildpipeline": {
       "version": "1.21.21",
       "depth": 1,
@@ -129,7 +140,7 @@
     },
     "com.unity.settings-manager": {
       "version": "2.0.1",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
