@@ -14,8 +14,9 @@ namespace Desolation.StatePattern
     /// </summary>
     public class PlayAnimation : StateBehaviour
     {
-        [Inject] private AniMateComponent _animate;
+        [Inject] private AniMateController _animate;
         [SerializeField] private AnimationClip _clip;
+        [SerializeField] private Layer _layer;
         [SerializeField] private bool _useDefaultDuration = true;
         [SerializeField] private float _clipDuration;
 
@@ -23,7 +24,7 @@ namespace Desolation.StatePattern
 
         public override void OnEnter()
         {
-            var state = _animate.Play(_clip);
+            var state = _animate.Play(_clip, _layer);
 
             if(!_useDefaultDuration)
                 state.Duration = _clipDuration;
