@@ -37,7 +37,6 @@ namespace Desolation.Entity.Antaine
 
             if (_controlls.GameMap.MoveVector.IsInProgress())
             {
-                Debug.Log("H");
                 Moving.Invoke();
             }
             else
