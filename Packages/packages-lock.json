@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
     },
+    "com.erichu33.u-playable-animation": {
+      "version": "https://github.com/Sod3n/uPlayableAnimation.git?path=/Assets/Plugins/uPlayableAnimation#main-extenject",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c5a8ef987e1c84169dcdbee81a977a3d72987cb7"
+    },
     "com.nenpotato.animate": {
       "version": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
       "depth": 0,
@@ -19,7 +26,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "9dbb021b879df34f766cccde0185166e50c863a6"
+      "hash": "c177842f55a2486ecf4091b57d6524fbe99d195c"
     },
     "com.unity.addressables": {
       "version": "1.21.19",

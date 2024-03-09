@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.erichu33.u-playable-animation": "https://github.com/Sod3n/uPlayableAnimation.git?path=/Assets/Plugins/uPlayableAnimation#main-extenject",
     "com.nenpotato.animate": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
     "com.nenpotato.hierarchicalstatpattern": "https://github.com/Sod3n/Hierarchical-State-Pattern.git?path=/Assets/Plugins/HierarchicalStatePattern",
     "com.unity.addressables": "1.21.19",

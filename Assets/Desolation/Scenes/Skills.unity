@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -258,7 +258,6 @@ GameObject:
   - component: {fileID: 158950654}
   - component: {fileID: 158950659}
   - component: {fileID: 158950658}
-  - component: {fileID: 158950657}
   - component: {fileID: 158950656}
   - component: {fileID: 158950655}
   m_Layer: 0
@@ -314,22 +313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageScale: 1
---- !u!114 &158950657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158950653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -7859264836081877659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 0
-  _clipDuration: 0.59375
 --- !u!114 &158950658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +344,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 992573657}
       EventReference:
-        _eventAsset: {fileID: 158950657}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -561,22 +544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitsPerSecond: 3.5
---- !u!114 &276713729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5732946444658216970}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 133698631187225960, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0.8333334
 --- !u!114 &276713730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,7 +569,6 @@ GameObject:
   - component: {fileID: 289606193}
   - component: {fileID: 289606192}
   - component: {fileID: 289606191}
-  - component: {fileID: 289606190}
   - component: {fileID: 289606189}
   - component: {fileID: 289606188}
   - component: {fileID: 289606187}
@@ -674,22 +640,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitsPerSecond: 3
---- !u!114 &289606190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289606185}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -25711308121401526, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &289606191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +658,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 385219514}
       EventReference:
-        _eventAsset: {fileID: 289606190}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -750,7 +700,6 @@ GameObject:
   - component: {fileID: 311240771}
   - component: {fileID: 311240766}
   - component: {fileID: 311240770}
-  - component: {fileID: 311240769}
   - component: {fileID: 311240768}
   - component: {fileID: 311240767}
   m_Layer: 0
@@ -799,22 +748,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _powerIncreasePerSecond: 1
---- !u!114 &311240769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311240765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -7517976187771183098, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &311240770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +895,6 @@ GameObject:
   - component: {fileID: 321028718}
   - component: {fileID: 321028715}
   - component: {fileID: 321028717}
-  - component: {fileID: 321028716}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -982,22 +914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &321028716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321028714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -2351857467064706558, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &321028717
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,7 +932,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 321028716}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -1046,7 +962,6 @@ GameObject:
   - component: {fileID: 385219517}
   - component: {fileID: 385219514}
   - component: {fileID: 385219516}
-  - component: {fileID: 385219515}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -1066,22 +981,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &385219515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 385219513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -1307747895808227859, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &385219516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +999,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 385219515}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -2663,8 +2562,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30.05237
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5866666021909216657, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 955245060662fed44bcf837fa64398f9, type: 3}
@@ -2673,7 +2571,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 955245060662fed44bcf837fa64398f9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 405600416}
+      addedObject: {fileID: 405600417}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 955245060662fed44bcf837fa64398f9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 405600415}
@@ -2702,11 +2600,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _components:
   - {fileID: 405600416}
+  - {fileID: 405600417}
   _identifier: 
   _useSceneContext: 0
   _context: {fileID: 0}
   _bindType: 0
---- !u!114 &405600416
+--- !u!95 &405600416 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  m_PrefabInstance: {fileID: 405600412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &405600417
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2715,10 +2619,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 405600414}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a4ab8ca89c5a74899039e8271e263c, type: 3}
+  m_Script: {fileID: 11500000, guid: 18498f4614684d14b942ac9d7ad80b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _avatar: {fileID: 9000000, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  m_useCustomFrameRate: 0
+  m_customFrameRate: 60
 --- !u!1 &482963551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2730,7 +2635,6 @@ GameObject:
   - component: {fileID: 482963552}
   - component: {fileID: 482963555}
   - component: {fileID: 482963554}
-  - component: {fileID: 482963553}
   m_Layer: 0
   m_Name: OverchargeState
   m_TagString: Untagged
@@ -2753,22 +2657,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714536694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &482963553
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 482963551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -8796768091919593184, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &482963554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2787,7 +2675,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 482963553}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -2814,7 +2702,6 @@ GameObject:
   - component: {fileID: 551707694}
   - component: {fileID: 551707689}
   - component: {fileID: 551707693}
-  - component: {fileID: 551707692}
   - component: {fileID: 551707691}
   - component: {fileID: 551707690}
   m_Layer: 0
@@ -2862,22 +2749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unitsPerSecond: 5
---- !u!114 &551707692
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 551707688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -4544348295636322209, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 0
-  _clipDuration: 1.5
 --- !u!114 &551707693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2896,7 +2767,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 551707692}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -2938,6 +2809,7 @@ GameObject:
   - component: {fileID: 564759667}
   - component: {fileID: 564759665}
   - component: {fileID: 564759670}
+  - component: {fileID: 564759671}
   m_Layer: 0
   m_Name: IdleState
   m_TagString: Untagged
@@ -2983,6 +2855,29 @@ MonoBehaviour:
       Conditions:
       - {fileID: 595754271}
       InversedConditions: []
+--- !u!114 &564759671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564759666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 0
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -7042725875776458289, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &595754268
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,7 +3330,6 @@ GameObject:
   - component: {fileID: 992573660}
   - component: {fileID: 992573657}
   - component: {fileID: 992573659}
-  - component: {fileID: 992573658}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -3455,22 +3349,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &992573658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992573656}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -4940607546641045013, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &992573659
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3492,7 +3370,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 992573658}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -3720,7 +3598,6 @@ GameObject:
   - component: {fileID: 1158801857}
   - component: {fileID: 1158801852}
   - component: {fileID: 1158801856}
-  - component: {fileID: 1158801855}
   - component: {fileID: 1158801854}
   - component: {fileID: 1158801853}
   m_Layer: 0
@@ -3777,22 +3654,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damageScale: 1
   _charge: {fileID: 311240768}
---- !u!114 &1158801855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158801851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -6087517888713073475, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &1158801856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3811,7 +3672,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 321028715}
       EventReference:
-        _eventAsset: {fileID: 1158801855}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -3895,7 +3756,6 @@ GameObject:
   - component: {fileID: 1430687015}
   - component: {fileID: 1430687020}
   - component: {fileID: 1430687019}
-  - component: {fileID: 1430687018}
   - component: {fileID: 1430687017}
   - component: {fileID: 1430687016}
   m_Layer: 0
@@ -3951,22 +3811,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageScale: 1
---- !u!114 &1430687018
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430687014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 1800461235413176547, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 0
-  _clipDuration: 0.3
 --- !u!114 &1430687019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3998,7 +3842,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 1558038502}
       EventReference:
-        _eventAsset: {fileID: 1430687018}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4158,7 +4002,6 @@ GameObject:
   - component: {fileID: 1558038505}
   - component: {fileID: 1558038502}
   - component: {fileID: 1558038504}
-  - component: {fileID: 1558038503}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -4178,22 +4021,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1558038503
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558038501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -3521652699595142977, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0.5416667
 --- !u!114 &1558038504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4215,7 +4042,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 1558038503}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4354,7 +4181,6 @@ GameObject:
   - component: {fileID: 1669992230}
   - component: {fileID: 1669992226}
   - component: {fileID: 1669992229}
-  - component: {fileID: 1669992228}
   - component: {fileID: 1669992227}
   m_Layer: 0
   m_Name: 'PrepareState '
@@ -4388,22 +4214,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 20
---- !u!114 &1669992228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669992225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -3727380767846620774, guid: e6d33713e0ff7c449a0b894495dcdc1b, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &1669992229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4422,7 +4232,7 @@ MonoBehaviour:
     - Name: ChargeState
       State: {fileID: 311240766}
       EventReference:
-        _eventAsset: {fileID: 1669992228}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4499,7 +4309,6 @@ GameObject:
   - component: {fileID: 1699534837}
   - component: {fileID: 1699534842}
   - component: {fileID: 1699534841}
-  - component: {fileID: 1699534840}
   - component: {fileID: 1699534839}
   - component: {fileID: 1699534838}
   m_Layer: 0
@@ -4555,22 +4364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageScale: 1
---- !u!114 &1699534840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699534836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: -3928707721757641659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 0
-  _clipDuration: 0.75
 --- !u!114 &1699534841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4602,7 +4395,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 1756887921}
       EventReference:
-        _eventAsset: {fileID: 1699534840}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4706,7 +4499,6 @@ GameObject:
   - component: {fileID: 1756887924}
   - component: {fileID: 1756887921}
   - component: {fileID: 1756887923}
-  - component: {fileID: 1756887922}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -4726,22 +4518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1756887922
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756887920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _clip: {fileID: 3443591290714626071, guid: 955245060662fed44bcf837fa64398f9, type: 3}
-  _layer: {fileID: 0}
-  _useDefaultDuration: 1
-  _clipDuration: 0
 --- !u!114 &1756887923
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4763,7 +4539,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 1756887922}
+        _eventAsset: {fileID: 0}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -5019,8 +4795,8 @@ GameObject:
   - component: {fileID: 6619179849462373380}
   - component: {fileID: 8444790610966344495}
   - component: {fileID: 276713730}
-  - component: {fileID: 276713729}
   - component: {fileID: 276713728}
+  - component: {fileID: 8444790610966344496}
   m_Layer: 0
   m_Name: MoveState
   m_TagString: Untagged
@@ -5085,6 +4861,29 @@ MonoBehaviour:
       Conditions: []
       InversedConditions:
       - {fileID: 595754271}
+--- !u!114 &8444790610966344496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732946444658216970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 0
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 133698631187225960, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
