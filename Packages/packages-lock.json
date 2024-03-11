@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c5a8ef987e1c84169dcdbee81a977a3d72987cb7"
+      "hash": "61343ca599f27f981a5fb93e79af2d5a927f61ed"
     },
     "com.nenpotato.animate": {
       "version": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
@@ -26,7 +26,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "c177842f55a2486ecf4091b57d6524fbe99d195c"
+      "hash": "2cbc9fb70b035b96899f6810a156ad67ffd4ec38"
     },
     "com.unity.addressables": {
       "version": "1.21.19",
@@ -126,6 +126,13 @@
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
+    },
+    "com.unity.playablegraph-visualizer": {
+      "version": "https://github.com/Unity-Technologies/graph-visualizer.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "cfb3a9f75dd2ef7cc4253b0439806646cdd79814"
     },
     "com.unity.scriptablebuildpipeline": {
       "version": "1.21.21",

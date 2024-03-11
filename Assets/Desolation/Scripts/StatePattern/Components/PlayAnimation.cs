@@ -5,31 +5,26 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UPlayable.AnimationMixer;
 using Zenject;
 
 namespace Desolation.StatePattern
 {
-    /// <summary>
-    /// Component become done when on clip end. 
-    /// </summary>
+    [RequireComponent(typeof(AnimationClipOutput))]
     public class PlayAnimation : StateBehaviour
     {
-        [Inject] private AniMateController _animate;
-        [SerializeField] private AnimationClip _clip;
-        [SerializeField] private Layer _layer;
-        [SerializeField] private bool _useDefaultDuration = true;
-        [SerializeField] private float _clipDuration;
+        private AnimationClipOutput _animationClipOutput;
 
-        public event Action OnPlayed = () => { };
+        public event Action OnPlayed;
 
         public override void OnEnter()
         {
-            var state = _animate.Play(_clip, _layer);
+            if(!_animationClipOutput)
+                _animationClipOutput = GetComponent<AnimationClipOutput>();
+            
+            _animationClipOutput.Play();
 
-            if(!_useDefaultDuration)
-                state.Duration = _clipDuration;
-
-            state.OnEnd += () => OnPlayed.Invoke();
+            _animationClipOutput.OnEnd += () => OnPlayed?.Invoke();
         }
     }
 }

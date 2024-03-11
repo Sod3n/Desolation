@@ -260,6 +260,8 @@ GameObject:
   - component: {fileID: 158950658}
   - component: {fileID: 158950656}
   - component: {fileID: 158950655}
+  - component: {fileID: 158950662}
+  - component: {fileID: 158950661}
   m_Layer: 0
   m_Name: ActionState
   m_TagString: Untagged
@@ -344,7 +346,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 992573657}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 158950661}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -363,6 +365,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 945421120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &158950661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158950653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &158950662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 158950653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -7859264836081877659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &210423598
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,6 +610,8 @@ GameObject:
   - component: {fileID: 289606188}
   - component: {fileID: 289606187}
   - component: {fileID: 289606186}
+  - component: {fileID: 289606195}
+  - component: {fileID: 289606194}
   m_Layer: 0
   m_Name: ActionState
   m_TagString: Untagged
@@ -658,7 +697,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 385219514}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 289606194}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -689,6 +728,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 629481071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289606194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289606185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &289606195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 289606185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -25711308121401526, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &311240765
 GameObject:
   m_ObjectHideFlags: 0
@@ -702,6 +776,8 @@ GameObject:
   - component: {fileID: 311240770}
   - component: {fileID: 311240768}
   - component: {fileID: 311240767}
+  - component: {fileID: 311240773}
+  - component: {fileID: 311240772}
   m_Layer: 0
   m_Name: ChargeState
   m_TagString: Untagged
@@ -792,6 +868,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714536694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &311240772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311240765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &311240773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 311240765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -5418475778483371188, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &314239137
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,6 +1006,9 @@ GameObject:
   - component: {fileID: 321028718}
   - component: {fileID: 321028715}
   - component: {fileID: 321028717}
+  - component: {fileID: 321028720}
+  - component: {fileID: 321028719}
+  - component: {fileID: 321028721}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -932,7 +1046,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 321028719}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -951,6 +1065,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714536694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &321028719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321028714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &321028720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321028714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 8834137314824831041, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &321028721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321028714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &385219513
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,6 +1123,9 @@ GameObject:
   - component: {fileID: 385219517}
   - component: {fileID: 385219514}
   - component: {fileID: 385219516}
+  - component: {fileID: 385219519}
+  - component: {fileID: 385219518}
+  - component: {fileID: 385219520}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -999,7 +1163,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 385219518}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -1018,6 +1182,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 629481071}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &385219518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385219513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &385219519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385219513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -1307747895808227859, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &385219520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385219513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &405600412
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2635,6 +2846,8 @@ GameObject:
   - component: {fileID: 482963552}
   - component: {fileID: 482963555}
   - component: {fileID: 482963554}
+  - component: {fileID: 482963557}
+  - component: {fileID: 482963556}
   m_Layer: 0
   m_Name: OverchargeState
   m_TagString: Untagged
@@ -2675,7 +2888,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 482963556}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -2691,6 +2904,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &482963556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482963551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &482963557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482963551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -8796768091919593184, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &551707688
 GameObject:
   m_ObjectHideFlags: 0
@@ -2704,6 +2952,8 @@ GameObject:
   - component: {fileID: 551707693}
   - component: {fileID: 551707691}
   - component: {fileID: 551707690}
+  - component: {fileID: 551707696}
+  - component: {fileID: 551707695}
   m_Layer: 0
   m_Name: ActionState
   m_TagString: Untagged
@@ -2767,7 +3017,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 551707695}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -2786,6 +3036,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1532329164}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551707695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551707688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &551707696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551707688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -4248399156002682263, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!114 &564759665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2809,6 +3094,7 @@ GameObject:
   - component: {fileID: 564759667}
   - component: {fileID: 564759665}
   - component: {fileID: 564759670}
+  - component: {fileID: 564759672}
   - component: {fileID: 564759671}
   m_Layer: 0
   m_Name: IdleState
@@ -2864,11 +3150,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 564759666}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &564759672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564759666}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LayerIndex: 0
-  AvatarMask: {fileID: 0}
+  AvatarMask: {fileID: 31900000, guid: d8d10d825e0edf54d86c0912bc42171a, type: 2}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1
@@ -3043,6 +3341,37 @@ Transform:
   - {fileID: 289606193}
   - {fileID: 385219517}
   m_Father: {fileID: 1389740947}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &658973896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 658973897}
+  m_Layer: 0
+  m_Name: GameObject (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &658973897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658973896}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.423896, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699460886
 GameObject:
@@ -3223,6 +3552,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1430687021}
+  - {fileID: 1049461850}
   - {fileID: 1558038505}
   m_Father: {fileID: 1566668399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3330,6 +3660,9 @@ GameObject:
   - component: {fileID: 992573660}
   - component: {fileID: 992573657}
   - component: {fileID: 992573659}
+  - component: {fileID: 992573662}
+  - component: {fileID: 992573661}
+  - component: {fileID: 992573663}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -3370,7 +3703,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 992573661}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -3389,6 +3722,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 945421120}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992573661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992573656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &992573662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992573656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 2
+  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -4940607546641045013, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &992573663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992573656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004896562
 GameObject:
   m_ObjectHideFlags: 0
@@ -3494,6 +3874,133 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1049461849
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049461850}
+  - component: {fileID: 1049461855}
+  - component: {fileID: 1049461854}
+  - component: {fileID: 1049461853}
+  - component: {fileID: 1049461852}
+  - component: {fileID: 1049461851}
+  m_Layer: 0
+  m_Name: PostActionState
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1049461850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 771630261}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1049461851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1049461852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1049461853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 1800461235413176547, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &1049461854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b894246951e4944d81af1681471d330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _references:
+  - {fileID: 629481068}
+  - {fileID: 1532329162}
+  - {fileID: 714536695}
+  _transitions:
+    Value:
+    - Name: IdleState
+      State: {fileID: 1737899622}
+      EventReference:
+        _eventAsset: {fileID: 1049461852}
+        _eventField: OnPlayed
+      Conditions: []
+      InversedConditions: []
+    - Name: BasicAttack2
+      State: {fileID: 1877146431}
+      EventReference:
+        _eventAsset: {fileID: 1103496354}
+        _eventField: BasicAttack
+      Conditions: []
+      InversedConditions: []
+--- !u!114 &1049461855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1071506854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3600,6 +4107,8 @@ GameObject:
   - component: {fileID: 1158801856}
   - component: {fileID: 1158801854}
   - component: {fileID: 1158801853}
+  - component: {fileID: 1158801859}
+  - component: {fileID: 1158801858}
   m_Layer: 0
   m_Name: AttackState
   m_TagString: Untagged
@@ -3672,7 +4181,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 321028715}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1158801858}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -3691,6 +4200,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714536694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1158801858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158801851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1158801859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158801851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 5732212079813469687, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &1389740946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,6 +4302,9 @@ GameObject:
   - component: {fileID: 1430687019}
   - component: {fileID: 1430687017}
   - component: {fileID: 1430687016}
+  - component: {fileID: 1430687023}
+  - component: {fileID: 1430687022}
+  - component: {fileID: 1430687024}
   m_Layer: 0
   m_Name: ActionState
   m_TagString: Untagged
@@ -3842,7 +4389,7 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 1558038502}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1430687022}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -3861,6 +4408,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 771630261}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1430687022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430687014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1430687023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430687014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 2
+  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 2
+    RestartWhenPlay: 0
+  ToClip: {fileID: 1800461235413176547, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &1430687024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1430687014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1447186482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,6 +4596,9 @@ GameObject:
   - component: {fileID: 1558038505}
   - component: {fileID: 1558038502}
   - component: {fileID: 1558038504}
+  - component: {fileID: 1558038507}
+  - component: {fileID: 1558038506}
+  - component: {fileID: 1558038508}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -4042,7 +4639,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1558038506}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4068,6 +4665,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 771630261}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1558038506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1558038507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 2
+  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 2
+    RestartWhenPlay: 0
+  ToClip: {fileID: -3521652699595142977, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &1558038508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558038501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1566668396
 GameObject:
   m_ObjectHideFlags: 0
@@ -4182,6 +4826,8 @@ GameObject:
   - component: {fileID: 1669992226}
   - component: {fileID: 1669992229}
   - component: {fileID: 1669992227}
+  - component: {fileID: 1669992232}
+  - component: {fileID: 1669992231}
   m_Layer: 0
   m_Name: 'PrepareState '
   m_TagString: Untagged
@@ -4232,7 +4878,7 @@ MonoBehaviour:
     - Name: ChargeState
       State: {fileID: 311240766}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1669992231}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4251,6 +4897,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714536694}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1669992231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669992225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1669992232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1669992225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 8125728741600367268, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &1686256158
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,6 +4992,8 @@ GameObject:
   - component: {fileID: 1699534841}
   - component: {fileID: 1699534839}
   - component: {fileID: 1699534838}
+  - component: {fileID: 1699534845}
+  - component: {fileID: 1699534844}
   m_Layer: 0
   m_Name: ActionState
   m_TagString: Untagged
@@ -4395,8 +5078,15 @@ MonoBehaviour:
     - Name: PostState
       State: {fileID: 1756887921}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1699534844}
         _eventField: OnPlayed
+      Conditions: []
+      InversedConditions: []
+    - Name: BasicAttack3
+      State: {fileID: 945421119}
+      EventReference:
+        _eventAsset: {fileID: 1103496354}
+        _eventField: BasicAttack
       Conditions: []
       InversedConditions: []
 --- !u!4 &1699534843
@@ -4414,6 +5104,41 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1877146432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1699534844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699534836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1699534845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699534836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: -3928707721757641659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
 --- !u!1 &1737899621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4499,6 +5224,9 @@ GameObject:
   - component: {fileID: 1756887924}
   - component: {fileID: 1756887921}
   - component: {fileID: 1756887923}
+  - component: {fileID: 1756887926}
+  - component: {fileID: 1756887925}
+  - component: {fileID: 1756887927}
   m_Layer: 0
   m_Name: PostState
   m_TagString: Untagged
@@ -4539,7 +5267,7 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 0}
+        _eventAsset: {fileID: 1756887925}
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
@@ -4565,6 +5293,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1877146432}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1756887925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756887920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1756887926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756887920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 2
+  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 3443591290714626071, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+--- !u!114 &1756887927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756887920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1796966546
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,6 +5480,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1847165268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847165269}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1847165269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847165268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.423896, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1877146430
 GameObject:
   m_ObjectHideFlags: 0
@@ -4796,6 +5602,7 @@ GameObject:
   - component: {fileID: 8444790610966344495}
   - component: {fileID: 276713730}
   - component: {fileID: 276713728}
+  - component: {fileID: 8444790610966344497}
   - component: {fileID: 8444790610966344496}
   m_Layer: 0
   m_Name: MoveState
@@ -4870,11 +5677,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5732946444658216970}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8444790610966344497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5732946444658216970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   LayerIndex: 0
-  AvatarMask: {fileID: 0}
+  AvatarMask: {fileID: 31900000, guid: d8d10d825e0edf54d86c0912bc42171a, type: 2}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1
@@ -4894,3 +5713,5 @@ SceneRoots:
   - {fileID: 1840059794}
   - {fileID: 1447186484}
   - {fileID: 1004896566}
+  - {fileID: 1847165269}
+  - {fileID: 658973897}
