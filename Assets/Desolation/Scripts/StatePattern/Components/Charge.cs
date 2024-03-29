@@ -22,6 +22,7 @@ namespace Desolation.StatePattern
         private void FixedUpdate()
         {
             Power += _powerIncreasePerSecond * Time.deltaTime;
+            Debug.Log("11");
         }
     }
 }
