@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 1
+  LayerIndex: 10
   AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
@@ -399,7 +399,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -7859264836081877659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -8826555771008368747, guid: 93c6a4b738806e62b9ececba69977c67, type: 3}
 --- !u!1 &210423598
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feaf71b9f71915848a27a8f2d970b420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _direction: {fileID: 1103496353}
+  _direction: {fileID: 1063945405}
   _magicRotationSpeed: 10
 --- !u!1 &289606185
 GameObject:
@@ -752,7 +752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 1
+  LayerIndex: 10
   AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
@@ -762,7 +762,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -25711308121401526, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -8619158482548813727, guid: d306f23544bdf812c871c2e28d185665, type: 3}
 --- !u!1 &311240765
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,7 +842,7 @@ MonoBehaviour:
     - Name: AttackState
       State: {fileID: 1158801852}
       EventReference:
-        _eventAsset: {fileID: 1103496354}
+        _eventAsset: {fileID: 462073563}
         _eventField: SkillThreeReleased
       Conditions: []
       InversedConditions: []
@@ -902,7 +902,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -5418475778483371188, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -1383509761662446955, guid: b136dc27c8e7faf10bfe4bbdf33167ce, type: 3}
 --- !u!1 &314239137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: 8834137314824831041, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -2611191060489819782, guid: 47326fdd0a3d11fe4902c665a6800b89, type: 3}
 --- !u!114 &321028721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1216,7 +1216,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -1307747895808227859, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 5582110809026475513, guid: b4e4260a45e972e0cbac59713c8245f6, type: 3}
 --- !u!114 &385219520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2832,6 +2832,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_useCustomFrameRate: 0
   m_customFrameRate: 60
+--- !u!1 &462073561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462073562}
+  - component: {fileID: 462073563}
+  m_Layer: 0
+  m_Name: Base
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462073562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462073561}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103496352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462073563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462073561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86e215352522fb4986881a37f100f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WorldAimPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &482963551
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,7 +2980,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -8796768091919593184, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -3059714082665141207, guid: 0a4d9179ce10dff299b2ad6733bf14be, type: 3}
 --- !u!1 &551707688
 GameObject:
   m_ObjectHideFlags: 0
@@ -3057,7 +3102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 1
+  LayerIndex: 10
   AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
@@ -3067,7 +3112,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -4248399156002682263, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 8216182481912639182, guid: a664f81d4d10e13678bf33af65812f12, type: 3}
 --- !u!114 &564759665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3133,7 +3178,7 @@ MonoBehaviour:
     - Name: MoveState
       State: {fileID: 6619179849462373380}
       EventReference:
-        _eventAsset: {fileID: 1103496354}
+        _eventAsset: {fileID: 462073563}
         _eventField: Moving
       Conditions:
       - {fileID: 595754271}
@@ -3163,7 +3208,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerIndex: 0
-  AvatarMask: {fileID: 31900000, guid: d8d10d825e0edf54d86c0912bc42171a, type: 2}
+  AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1
@@ -3173,11 +3218,6 @@ MonoBehaviour:
     ClipSpeed: 1
     RestartWhenPlay: 0
   ToClip: {fileID: -5322505380917796378, guid: e08b81d4b801175059e1055e077212b3, type: 3}
---- !u!1 &566863097 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-  m_PrefabInstance: {fileID: 1409075586}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &595754268
 GameObject:
   m_ObjectHideFlags: 0
@@ -3296,7 +3336,7 @@ MonoBehaviour:
     Name: Elem
     State: {fileID: 629481070}
     EventReference:
-      _eventAsset: {fileID: 1103496354}
+      _eventAsset: {fileID: 462073563}
       _eventField: SkillOne
     Conditions:
     - {fileID: 629481069}
@@ -3344,6 +3384,155 @@ Transform:
   - {fileID: 385219517}
   m_Father: {fileID: 1389740947}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &655959319
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 655959320}
+  - component: {fileID: 655959325}
+  - component: {fileID: 655959324}
+  - component: {fileID: 655959323}
+  - component: {fileID: 655959322}
+  - component: {fileID: 655959321}
+  - component: {fileID: 655959326}
+  m_Layer: 0
+  m_Name: WaitNextAttack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &655959320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1877146432}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &655959321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &655959322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf54ffcedc087ba459ee35a106feff12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &655959323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
+  IsStatic: 0
+  TransitionSetting:
+    OutputTargetWeight: 1
+    FadeInTime: 0
+    FixedTimeOffset: 0
+    ExitTime: 0
+    ClipSpeed: 1
+    RestartWhenPlay: 0
+  ToClip: {fileID: 98582576618851205, guid: f5d4a21a364ac9b67b2a18145e856201, type: 3}
+--- !u!114 &655959324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b894246951e4944d81af1681471d330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _references:
+  - {fileID: 629481068}
+  - {fileID: 1532329162}
+  - {fileID: 714536695}
+  - {fileID: 945421121}
+  _transitions:
+    Value:
+    - Name: IdleState
+      State: {fileID: 1737899622}
+      EventReference:
+        _eventAsset: {fileID: 655959322}
+        _eventField: OnPlayed
+      Conditions: []
+      InversedConditions: []
+    - Name: PostState
+      State: {fileID: 1756887921}
+      EventReference:
+        _eventAsset: {fileID: 655959326}
+        _eventField: OnEnd
+      Conditions: []
+      InversedConditions: []
+    - Name: IdleState
+      State: {fileID: 1737899622}
+      EventReference:
+        _eventAsset: {fileID: 462073563}
+        _eventField: Moving
+      Conditions: []
+      InversedConditions: []
+--- !u!114 &655959325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &655959326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655959319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c816fbc7cb364f1185e289d717fd1514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1
 --- !u!1 &658973896
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,7 +3595,39 @@ Transform:
   m_Children:
   - {fileID: 1103496352}
   - {fileID: 595754269}
+  - {fileID: 707489612}
   m_Father: {fileID: 96536538}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &707489611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707489612}
+  m_Layer: 0
+  m_Name: Model
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &707489612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707489611}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 699460887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &714536693
 GameObject:
@@ -3462,7 +3683,7 @@ MonoBehaviour:
     Name: Elem
     State: {fileID: 714536696}
     EventReference:
-      _eventAsset: {fileID: 1103496354}
+      _eventAsset: {fileID: 462073563}
       _eventField: SkillThree
     Conditions: []
     InversedConditions: []
@@ -3568,6 +3789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 945421120}
   - component: {fileID: 945421119}
+  - component: {fileID: 945421121}
   m_Layer: 0
   m_Name: BasicAttack3
   m_TagString: Untagged
@@ -3605,6 +3827,26 @@ Transform:
   - {fileID: 992573660}
   m_Father: {fileID: 1566668399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &945421121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945421118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e9c43529ca674468d8d252bd1f4d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionData:
+    Name: State
+    State: {fileID: 289606192}
+    EventReference:
+      _eventAsset: {fileID: 462073563}
+      _eventField: BasicAttack
+    Conditions: []
+    InversedConditions: []
 --- !u!1 &992573656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3712,7 +3954,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -4940607546641045013, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -4520580973209700012, guid: c0d9eb3bc3fc298329e69d2d459f377e, type: 3}
 --- !u!114 &992573663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3843,9 +4085,9 @@ GameObject:
   - component: {fileID: 1049461854}
   - component: {fileID: 1049461853}
   - component: {fileID: 1049461852}
-  - component: {fileID: 1049461851}
+  - component: {fileID: 1049461856}
   m_Layer: 0
-  m_Name: PostActionState
+  m_Name: WaitNextAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3866,18 +4108,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 771630261}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1049461851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049461849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 367db3dc1093b0b469818496d531d013, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1049461852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3912,7 +4142,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: 1800461235413176547, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: -7327581005111198130, guid: 3d8f4ce589140784b94e71596e43158d, type: 3}
 --- !u!114 &1049461854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3929,20 +4159,21 @@ MonoBehaviour:
   - {fileID: 629481068}
   - {fileID: 1532329162}
   - {fileID: 714536695}
+  - {fileID: 1877146433}
   _transitions:
     Value:
+    - Name: PostState
+      State: {fileID: 1558038502}
+      EventReference:
+        _eventAsset: {fileID: 1049461856}
+        _eventField: OnEnd
+      Conditions: []
+      InversedConditions: []
     - Name: IdleState
       State: {fileID: 1737899622}
       EventReference:
-        _eventAsset: {fileID: 1049461852}
-        _eventField: OnPlayed
-      Conditions: []
-      InversedConditions: []
-    - Name: BasicAttack2
-      State: {fileID: 1877146431}
-      EventReference:
-        _eventAsset: {fileID: 1103496354}
-        _eventField: BasicAttack
+        _eventAsset: {fileID: 462073563}
+        _eventField: Moving
       Conditions: []
       InversedConditions: []
 --- !u!114 &1049461855
@@ -3957,6 +4188,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60a78ffa1312624e8b872de3a694f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1049461856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049461849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c816fbc7cb364f1185e289d717fd1514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 1
+--- !u!1 &1063945403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1063945404}
+  - component: {fileID: 1063945405}
+  m_Layer: 0
+  m_Name: MoveDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1063945404
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063945403}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103496352}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1063945405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1063945403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b3ed3082979d148af335ed674d7471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _value: {x: 0, y: 0, z: 0}
 --- !u!1 &1103496351
 GameObject:
   m_ObjectHideFlags: 0
@@ -3966,8 +4255,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103496352}
-  - component: {fileID: 1103496354}
-  - component: {fileID: 1103496353}
   m_Layer: 0
   m_Name: Input
   m_TagString: Untagged
@@ -3987,35 +4274,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 462073562}
+  - {fileID: 1063945404}
   m_Father: {fileID: 699460887}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1103496353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103496351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3b3ed3082979d148af335ed674d7471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _value: {x: 0, y: 0, z: 0}
---- !u!114 &1103496354
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103496351}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f86e215352522fb4986881a37f100f23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WorldAimPoint: {x: 0, y: 0, z: 0}
 --- !u!1 &1158801851
 GameObject:
   m_ObjectHideFlags: 0
@@ -4156,7 +4419,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: 5732212079813469687, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 5277117827205343698, guid: 1106ab5f43b35819b99863de9609581b, type: 3}
 --- !u!1 &1389740946
 GameObject:
   m_ObjectHideFlags: 0
@@ -4210,96 +4473,6 @@ MonoBehaviour:
   - {fileID: 629481068}
   - {fileID: 1532329162}
   - {fileID: 714536695}
---- !u!1001 &1409075586
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1606259705}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_Name
-      value: antaine mesh
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1409075588}
-  m_SourcePrefab: {fileID: 100100000, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
---- !u!4 &1409075587 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1a102eeffae1fa8009fcac5db4435a77, type: 3}
-  m_PrefabInstance: {fileID: 1409075586}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1409075588
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 566863097}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 71cd4a99ae3fe89e48519ba643370e43, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1430687014
 GameObject:
   m_ObjectHideFlags: 0
@@ -4311,7 +4484,6 @@ GameObject:
   - component: {fileID: 1430687021}
   - component: {fileID: 1430687015}
   - component: {fileID: 1430687020}
-  - component: {fileID: 1430687019}
   - component: {fileID: 1430687017}
   - component: {fileID: 1430687016}
   - component: {fileID: 1430687023}
@@ -4370,19 +4542,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damageScale: 1
---- !u!114 &1430687019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1430687014}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3b8816d04d8f94ea745d7ed005ace7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _unitsPerSecond: 1.5
 --- !u!114 &1430687020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4398,8 +4557,8 @@ MonoBehaviour:
   _references: []
   _transitions:
     Value:
-    - Name: PostState
-      State: {fileID: 1558038502}
+    - Name: WaitNextAttack
+      State: {fileID: 1049461855}
       EventReference:
         _eventAsset: {fileID: 1430687022}
         _eventField: OnPlayed
@@ -4444,7 +4603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 2
+  LayerIndex: 10
   AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
   IsStatic: 0
   TransitionSetting:
@@ -4454,7 +4613,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 2
     RestartWhenPlay: 0
-  ToClip: {fileID: 1800461235413176547, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 5907764150772300332, guid: 416b5ea8d361669159b3eec767caf6dc, type: 3}
 --- !u!114 &1430687024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4564,7 +4723,7 @@ MonoBehaviour:
     Name: Elem
     State: {fileID: 1532329163}
     EventReference:
-      _eventAsset: {fileID: 1103496354}
+      _eventAsset: {fileID: 462073563}
       _eventField: SkillTwo
     Conditions: []
     InversedConditions: []
@@ -4655,13 +4814,6 @@ MonoBehaviour:
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
-    - Name: BasicAttack2
-      State: {fileID: 1877146431}
-      EventReference:
-        _eventAsset: {fileID: 1103496354}
-        _eventField: BasicAttack
-      Conditions: []
-      InversedConditions: []
 --- !u!4 &1558038505
 Transform:
   m_ObjectHideFlags: 0
@@ -4701,8 +4853,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 2
-  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1
@@ -4711,7 +4863,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 2
     RestartWhenPlay: 0
-  ToClip: {fileID: -3521652699595142977, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 1073366173725950361, guid: f2e84a2b6fb01957eb666b2d8f78ac63, type: 3}
 --- !u!114 &1558038508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4758,7 +4910,7 @@ MonoBehaviour:
     Name: State
     State: {fileID: 1566668398}
     EventReference:
-      _eventAsset: {fileID: 1103496354}
+      _eventAsset: {fileID: 462073563}
       _eventField: BasicAttack
     Conditions: []
     InversedConditions: []
@@ -4822,7 +4974,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1409075587}
   - {fileID: 405600413}
   m_Father: {fileID: 96536538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4943,7 +5094,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: 8125728741600367268, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 6239991185814042892, guid: 1ad236e72dc8961248d65bf6b2a44a51, type: 3}
 --- !u!1 &1699534836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,18 +5192,11 @@ MonoBehaviour:
   _references: []
   _transitions:
     Value:
-    - Name: PostState
-      State: {fileID: 1756887921}
+    - Name: WaitNextAttack
+      State: {fileID: 655959325}
       EventReference:
         _eventAsset: {fileID: 1699534844}
         _eventField: OnPlayed
-      Conditions: []
-      InversedConditions: []
-    - Name: BasicAttack3
-      State: {fileID: 945421119}
-      EventReference:
-        _eventAsset: {fileID: 1103496354}
-        _eventField: BasicAttack
       Conditions: []
       InversedConditions: []
 --- !u!4 &1699534843
@@ -5094,7 +5238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 1
+  LayerIndex: 10
   AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
@@ -5104,7 +5248,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: -3928707721757641659, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 5593410716172062612, guid: 9d6fd9a6942d36343af785e420664eef, type: 3}
 --- !u!1 &1737899621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,13 +5381,6 @@ MonoBehaviour:
         _eventField: OnPlayed
       Conditions: []
       InversedConditions: []
-    - Name: BasicAttack3
-      State: {fileID: 945421119}
-      EventReference:
-        _eventAsset: {fileID: 1103496354}
-        _eventField: BasicAttack
-      Conditions: []
-      InversedConditions: []
 --- !u!4 &1756887924
 Transform:
   m_ObjectHideFlags: 0
@@ -5283,8 +5420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7252b345e69f9439e871e0102cb078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LayerIndex: 2
-  AvatarMask: {fileID: 31900000, guid: 95b1718166033f74bba0e1248e7870d8, type: 2}
+  LayerIndex: 1
+  AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1
@@ -5293,7 +5430,7 @@ MonoBehaviour:
     ExitTime: 0
     ClipSpeed: 1
     RestartWhenPlay: 0
-  ToClip: {fileID: 3443591290714626071, guid: 955245060662fed44bcf837fa64398f9, type: 3}
+  ToClip: {fileID: 4697464495716648810, guid: 8f2a980a4a3cabd5bbfda5c3f4a6dce5, type: 3}
 --- !u!114 &1756887927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5441,6 +5578,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1877146432}
   - component: {fileID: 1877146431}
+  - component: {fileID: 1877146433}
   m_Layer: 0
   m_Name: BasicAttack2
   m_TagString: Untagged
@@ -5475,9 +5613,30 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1699534843}
+  - {fileID: 655959320}
   - {fileID: 1756887924}
   m_Father: {fileID: 1566668399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877146433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877146430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7e9c43529ca674468d8d252bd1f4d07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transitionData:
+    Name: State
+    State: {fileID: 1699534837}
+    EventReference:
+      _eventAsset: {fileID: 462073563}
+      _eventField: BasicAttack
+    Conditions: []
+    InversedConditions: []
 --- !u!1 &5732946444658216970
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,14 +5704,14 @@ MonoBehaviour:
     - Name: IdleState
       State: {fileID: 564759665}
       EventReference:
-        _eventAsset: {fileID: 1103496354}
+        _eventAsset: {fileID: 462073563}
         _eventField: NotMoving
       Conditions: []
       InversedConditions: []
     - Name: IdleState
       State: {fileID: 564759665}
       EventReference:
-        _eventAsset: {fileID: 1103496354}
+        _eventAsset: {fileID: 462073563}
         _eventField: Moving
       Conditions: []
       InversedConditions:
@@ -5582,7 +5741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LayerIndex: 0
-  AvatarMask: {fileID: 31900000, guid: d8d10d825e0edf54d86c0912bc42171a, type: 2}
+  AvatarMask: {fileID: 0}
   IsStatic: 0
   TransitionSetting:
     OutputTargetWeight: 1

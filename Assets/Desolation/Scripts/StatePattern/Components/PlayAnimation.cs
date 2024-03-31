@@ -26,5 +26,10 @@ namespace Desolation.StatePattern
 
             _animationClipOutput.OnEnd += () => OnPlayed?.Invoke();
         }
+
+        public override void OnExit()
+        {
+            _animationClipOutput.Play();
+        }
     }
 }

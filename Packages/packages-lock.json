@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "61343ca599f27f981a5fb93e79af2d5a927f61ed"
+      "hash": "d36d820353f838b17756b0b59cb5822837cbece4"
     },
     "com.nenpotato.animate": {
       "version": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
