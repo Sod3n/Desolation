@@ -1,0 +1,22 @@
+{
+    "name": "Desolation.StatePattern",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:9fbe4e4c40a033b4f9491bd0629293b7",
+        "GUID:eea6a5785352f514284a45b572799913",
+        "GUID:60f5913ade7e9fb49add342e4e576626",
+        "GUID:cc0793e2f39c3b14cb3b3214d565fe19",
+        "GUID:2e36558d49f54be2ad7327167c62158f",
+        "GUID:129ffdb905e932445b709c3275f09c63"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
