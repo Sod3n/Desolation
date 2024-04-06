@@ -1,4 +1,3 @@
-using AniMate;
 using Desolation.StatePattern;
 using HierarchicalStatePattern;
 using System;

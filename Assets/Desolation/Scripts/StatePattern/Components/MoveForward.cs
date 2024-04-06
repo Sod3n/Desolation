@@ -1,6 +1,4 @@
 using HierarchicalStatePattern;
-using log4net.Util;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,8 +15,24 @@ namespace Desolation.StatePattern
 
         private void FixedUpdate()
         {
-            _rigidbody.MovePosition(
-                _rigidbody.transform.position + _rigidbody.transform.forward * _unitsPerSecond * Time.fixedDeltaTime);
+            /*var raw = _rigidbody.transform.forward * _unitsPerSecond;
+            var sign = raw.normalized;
+            var vel = raw - _rigidbody.velocity;
+            var velSign = vel.normalized;
+
+            if (Math.Abs(Mathf.Ceil(sign.x) - Mathf.Ceil(velSign.x)) > 0.001) vel.x *= 0;
+            if (Math.Abs(Mathf.Ceil(sign.y) - Mathf.Ceil(velSign.y)) > 0.001) vel.y *= 0;
+            if (Math.Abs(Mathf.Ceil(sign.z) - Mathf.Ceil(velSign.z)) > 0.001) vel.z *= 0;
+            
+            _rigidbody.AddForce(vel, ForceMode.VelocityChange);*/
+
+            _rigidbody.velocity = _rigidbody.transform.forward * (_unitsPerSecond);
+
+        }
+
+        public override void OnExit()
+        {
+            _rigidbody.velocity = Vector3.zero;
         }
     }
 }

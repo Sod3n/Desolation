@@ -9,6 +9,6 @@ namespace Desolation.StatePattern
     {
         [SerializeField] protected Vector3 _value;
 
-        public Vector3 Value => _value;
+        public virtual Vector3 Value => _value;
     }
 }

@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class InputClickDirection : Direction
+    public class InputMouseDirection : Direction
     {
         [Inject] private Controlls _controlls;
         [Inject] private Transform _transform;
@@ -26,19 +26,6 @@ namespace Desolation.StatePattern
             _clickDirection = (_worldAimPoint - _centerPoint);
             
             _value = _clickDirection.normalized;
-        }
-        
-        private Vector3 ScreenToWorldPointOnYSurface(Vector2 vector2)
-        {
-            Vector3 direction = Camera.main.ScreenToWorldPoint(
-                new Vector3(vector2.x, vector2.y, Camera.main.farClipPlane));
-
-            direction *= 1 / direction.y;
-            direction *= -Camera.main.transform.position.y;
-
-            Debug.DrawRay(Camera.main.transform.position, direction);
-
-            return Camera.main.transform.position + direction;
         }
     }
 }

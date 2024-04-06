@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using GoogleSheetConverter = Cathei.BakingSheet.GoogleSheetConverter;
 
-namespace Desolation.Scripts.Data.Editor
+namespace Desolation.Scripts.GameData.Editor
 {
     public class ConvertorFromGoogleDocsWindow : EditorWindow
     {
@@ -35,11 +35,11 @@ namespace Desolation.Scripts.Data.Editor
 
             // service account credential than can read the sheet you're converting
             // this starts with { "type": "service_account", "project_id": ...
-            string googleCredential = File.ReadAllText("Assets/Desolation/Scripts/Data/credentials.json");
+            string googleCredential = File.ReadAllText("Assets/Desolation/GameData/credentials.json");
 
             var googleConverter = new GoogleSheetConverter(googleSheetId, googleCredential);
 
-            var jsonConverter = new JsonSheetConverter("Assets/Desolation/Scripts/Data/Converted/");
+            var jsonConverter = new JsonSheetConverter("Assets/Desolation/GameData/Converted/");
                 
             // bake sheets from google converter
             await sheetContainer.Bake(googleConverter);

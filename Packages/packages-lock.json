@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.cathei.bakingsheet": {
+      "version": "https://github.com/cathei/BakingSheet.git?path=UnityProject/Packages/com.cathei.bakingsheet#v4.1.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
+      },
+      "hash": "bea4bc80bf51ac1712b118007108a7621a981bc5"
+    },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
       "depth": 0,
@@ -12,21 +21,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d36d820353f838b17756b0b59cb5822837cbece4"
-    },
-    "com.nenpotato.animate": {
-      "version": "https://github.com/Sod3n/AniMate.git?path=/Assets/Plugins/AniMate",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "3f41562fbd4ac8b9cb7b5cb3d32ae07751c88926"
+      "hash": "f17b5f004286b6f856a28d17942d57693e641d08"
     },
     "com.nenpotato.hierarchicalstatpattern": {
       "version": "https://github.com/Sod3n/Hierarchical-State-Pattern.git?path=/Assets/Plugins/HierarchicalStatePattern",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2cbc9fb70b035b96899f6810a156ad67ffd4ec38"
+      "hash": "3562b08b222d069d9f9a3b14b134a1b7a7c68559"
     },
     "com.unity.addressables": {
       "version": "1.21.19",
@@ -118,6 +120,13 @@
       "dependencies": {
         "com.unity.modules.uielements": "1.0.0"
       },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
       "url": "https://packages.unity.com"
     },
     "com.unity.performance.profile-analyzer": {

@@ -5,10 +5,10 @@ using Zenject;
 
 namespace Desolation.Scripts.Entity.UI
 {
-    public class BarPresenter : MonoBehaviour
+    public class HealthBarPresenter : MonoBehaviour
     {
-        [Inject] private Bar _bar;
         [Inject] private Health _health;
+        [SerializeField] private Bar _bar;
 
         private void FixedUpdate()
         {

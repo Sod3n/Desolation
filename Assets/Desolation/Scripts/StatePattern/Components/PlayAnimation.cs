@@ -1,4 +1,3 @@
-using AniMate;
 using Desolation.StatePattern;
 using HierarchicalStatePattern;
 using System;
@@ -24,12 +23,17 @@ namespace Desolation.StatePattern
             
             _animationClipOutput.Play();
 
-            _animationClipOutput.OnEnd += () => OnPlayed?.Invoke();
+            _animationClipOutput.OnEnd += InvokeOnPlayed;
+        }
+
+        private void InvokeOnPlayed()
+        {
+            OnPlayed?.Invoke();
         }
 
         public override void OnExit()
         {
-            _animationClipOutput.Play();
+            _animationClipOutput.OnEnd -= InvokeOnPlayed; 
         }
     }
 }

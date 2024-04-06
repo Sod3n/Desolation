@@ -11,28 +11,25 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class MakeDamage : StateBehaviour
+    public class Push : StateBehaviour
     {
         
         [Inject] private Transform _transform;
-        [Inject] private DamageSystem _damageSystem;
+        
+        [SerializeField] protected float _force;
 
-
-        [Header("Remember to asign collider")]
-        [SerializeField] protected float _damageScale;
-
-        private List<GameObject> _alreadyDamaged = new List<GameObject>();
+        private List<GameObject> _alreadyPushed = new List<GameObject>();
 
         public override void OnEnter()
         {
-            _alreadyDamaged.Clear();
+            _alreadyPushed.Clear();
         }
 
         private void OnTriggerStay(Collider collider)
         {
             if (collider is null) return;
             
-            if(_alreadyDamaged.Contains(collider.gameObject)) return;
+            if(_alreadyPushed.Contains(collider.gameObject)) return;
 
             if (collider.transform == _transform) return;
 
@@ -40,8 +37,10 @@ namespace Desolation.StatePattern
             
             if(sufferSystem == null) return;
             
-            _damageSystem.PerfomDamage(sufferSystem);
-            _alreadyDamaged.Add(collider.gameObject);
+            var direction = (collider.transform.position - transform.position).normalized;
+            
+            sufferSystem.GetPushed(direction, _force);
+            _alreadyPushed.Add(collider.gameObject);
         } 
     }
 }

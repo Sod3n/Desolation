@@ -1,22 +1,28 @@
-﻿using HierarchicalStatePattern;
+﻿using System;
+using HierarchicalStatePattern;
 using UnityEngine;
 using Zenject;
+using Input = Desolation.Entity.Antaine.Input;
 
 namespace Desolation.StatePattern
 {
-    public class InputClickDirection : Direction
+    public class InputBasicAttackDirection : Direction
     {
         [Inject] private Controlls _controlls;
         [Inject] private Transform _transform;
+        [Inject] private Input _input;
 
         private Vector3 _worldAimPoint;
         private Vector3 _clickDirection;
         private Vector3 _centerPoint;
-        
-        private void Update()
+
+        private void Start()
         {
-            if (!_controlls.GameMap.BasicAttack.WasReleasedThisFrame()) return;
-            
+            _input.BasicAttack += FindClickPosition;
+        }
+
+        private void FindClickPosition()
+        {
             _worldAimPoint = _controlls.GameMap.AimPoint.ReadValue<Vector2>();
 
             _worldAimPoint.z = _worldAimPoint.y;

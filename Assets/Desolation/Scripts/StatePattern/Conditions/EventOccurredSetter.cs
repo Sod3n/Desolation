@@ -8,12 +8,30 @@ using Zenject;
 
 namespace Desolation.StatePattern
 {
-    public class EventOccurred : TransitionCondition
+    public class EventOccurredSetter : StateBehaviour
     {
-        private bool _isSatisfied;
-        public override bool IsSatisfied
+        private EventOccurred _eventOccurred;
+        private void Awake()
         {
-            get;
+            _eventOccurred = GetComponent<EventOccurred>();
+            _eventOccurred.EventRef.Initialize();
+        }
+
+        public override void OnEnter()
+        {
+            _eventOccurred.Value = false;
+            
+            _eventOccurred.EventRef += ToTrue;
+        }
+
+        private void ToTrue()
+        {
+            _eventOccurred.Value = true;
+        }
+
+        public override void OnExit()
+        {
+            _eventOccurred.EventRef -= ToTrue;
         }
     }
 }

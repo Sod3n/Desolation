@@ -1,3 +1,4 @@
 {
-	"name": "Entity"
+	"name": "Desolation.Entity.Systems",
+	"references":[ "GUID:78e9e4a37a176994398f0609403bc836" ]
 }

@@ -1,7 +1,7 @@
 ﻿using Cathei.BakingSheet;
-using Desolation.Scripts.Data.Sheets;
+using Desolation.Scripts.GameData.Sheets;
 
-namespace Desolation.Scripts.Data
+namespace Desolation.Scripts.GameData
 {
     public class SheetContainer : SheetContainerBase
     {
