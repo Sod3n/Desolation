@@ -8,9 +8,9 @@ TerrainLayer:
   m_PrefabAsset: {fileID: 0}
   m_Name: Grass Land terrain layer
   m_DiffuseTexture: {fileID: 2800000, guid: 4f1544768b246264bad6006dd8f9a907, type: 3}
-  m_NormalMapTexture: {fileID: 0}
-  m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 2, y: 2}
+  m_NormalMapTexture: {fileID: 2800000, guid: 5f43249aa4bc0cc43967782112040fcf, type: 3}
+  m_MaskMapTexture: {fileID: 2800000, guid: 9328a68796d27a94d92328054dc1e080, type: 3}
+  m_TileSize: {x: 1, y: 1}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
